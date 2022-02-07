@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -20,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    final String COUNTRY_DATA_URL = "https://corona.lmao.ninja/v2/";
+    private String COUNTRY_DATA_URL = "https://corona.lmao.ninja/v2/";
 
     TextView tv_cases, tv_deaths, tv_recoveries;
     Button btn_get;
@@ -36,17 +34,16 @@ public class MainActivity extends AppCompatActivity {
         tv_deaths = findViewById(R.id.deaths);
         tv_recoveries = findViewById(R.id.recoveries);
         btn_get = findViewById(R.id.button);
-        getData();
         btn_get.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                getData();
             }
         });
 
     }
 
-    public void getData(){
+    public void getData() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(COUNTRY_DATA_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -60,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<CountryData>> call, Response<List<CountryData>> response) {
                 listCountryData = response.body();
-                for (CountryData c: listCountryData) {
+                for (CountryData c : listCountryData) {
                     tv_cases.append("Case: " + c.getCountryInfo().getIso3() + "\n\n");
                 }
             }
