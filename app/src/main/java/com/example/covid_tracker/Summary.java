@@ -3,41 +3,119 @@ package com.example.covid_tracker;
 import java.util.List;
 
 public class Summary {
-    private String ID;
-    private String Message;
-    private Global Global;
-    private List<Country> Countries;
+    private long updated;
+    private String country;
+    private CountryInfo countryInfo;
+    private long cases;
+    private long todayCases;
+    private long deaths;
+    private long todayDeaths;
+    private long recovered;
+    private long todayRecovered;
+    private long active;
+    private long critical;
+    private long casesPerOneMillion;
+    private long deathsPerOneMillion;
+    private long tests;
+    private long testsPerOneMillion;
+    private long population;
+    private String continent;
+    private long oneCasePerPeople;
+    private long oneDeathPerPeople;
+    private long oneTestPerPeople;
+    private long activePerOneMillion;
+    private long recoveredPerOneMillion;
+    private long criticalPerOneMillion;
 
-    public Summary(String ID, String message, Global global, List<Country> countries) {
-        this.ID = ID;
-        Message = message;
-        Global = global;
-        Countries = countries;
+    public long getUpdated() {
+        return updated;
     }
 
-    public String getID() {
-        return ID;
+    public String getCountry() {
+        return country;
     }
 
-    public String getMessage() {
-        return Message;
+    public CountryInfo getCountryInfo() {
+        return countryInfo;
     }
 
-    public com.example.covid_tracker.Global getGlobal() {
-        return Global;
+    public long getCases() {
+        return cases;
     }
 
-    public List<Country> getCountries() {
-        return Countries;
+    public long getTodayCases() {
+        return todayCases;
     }
 
-    @Override
-    public String toString() {
-        return "Summary{" +
-                "ID='" + ID + '\'' +
-                ", Message='" + Message + '\'' +
-                ", Global=" + Global +
-                ", Countries=" + Countries +
-                '}';
+    public long getDeaths() {
+        return deaths;
+    }
+
+    public long getTodayDeaths() {
+        return todayDeaths;
+    }
+
+    public long getRecovered() {
+        return recovered;
+    }
+
+    public long getTodayRecovered() {
+        return todayRecovered;
+    }
+
+    public long getActive() {
+        return active;
+    }
+
+    public long getCritical() {
+        return critical;
+    }
+
+    public long getCasesPerOneMillion() {
+        return casesPerOneMillion;
+    }
+
+    public long getDeathsPerOneMillion() {
+        return deathsPerOneMillion;
+    }
+
+    public long getTests() {
+        return tests;
+    }
+
+    public long getTestsPerOneMillion() {
+        return testsPerOneMillion;
+    }
+
+    public long getPopulation() {
+        return population;
+    }
+
+    public String getContinent() {
+        return continent;
+    }
+
+    public long getOneCasePerPeople() {
+        return oneCasePerPeople;
+    }
+
+    public long getOneDeathPerPeople() {
+        return oneDeathPerPeople;
+    }
+
+    public long getOneTestPerPeople() {
+        return oneTestPerPeople;
+    }
+
+    public long getActivePerOneMillion() {
+        return activePerOneMillion;
+    }
+
+    public long getRecoveredPerOneMillion() {
+        return recoveredPerOneMillion;
+    }
+
+    public long getCriticalPerOneMillion() {
+        return criticalPerOneMillion;
     }
 }
