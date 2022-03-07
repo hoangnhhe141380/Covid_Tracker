@@ -1,5 +1,8 @@
 package com.example.covid_tracker;
 
+import com.example.covid_tracker.model.CountryData;
+import com.example.covid_tracker.model.Summary;
+
 import java.util.List;
 
 import retrofit2.Call;

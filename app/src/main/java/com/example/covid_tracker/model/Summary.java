@@ -1,6 +1,4 @@
-package com.example.covid_tracker;
-
-import java.util.List;
+package com.example.covid_tracker.model;
 
 public class Summary {
     private long updated;

@@ -1,4 +1,4 @@
-package com.example.covid_tracker;
+package com.example.covid_tracker.model;
 
 public class CountryInfo {
     private long _id;
