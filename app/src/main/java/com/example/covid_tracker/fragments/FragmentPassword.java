@@ -16,6 +16,7 @@ public class FragmentPassword extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        getActivity().setTitle("SIGN IN - STEP 2/2");
         return inflater.inflate(R.layout.layout_fragment_password, container, false);
     }
 }

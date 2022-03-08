@@ -21,6 +21,7 @@ import com.example.covid_tracker.fragments.FragmentHome;
 import com.example.covid_tracker.fragments.FragmentLogin;
 import com.example.covid_tracker.fragments.FragmentLogout;
 import com.example.covid_tracker.fragments.FragmentMedicalDeclaredData;
+import com.example.covid_tracker.fragments.FragmentPassword;
 import com.example.covid_tracker.fragments.FragmentPrevention;
 import com.example.covid_tracker.fragments.FragmentProfile;
 import com.example.covid_tracker.fragments.FragmentSymptoms;
@@ -43,13 +44,14 @@ public class MainActivity extends AppCompatActivity
 
     private final int FRAGMENT_LOGIN = 0;
     private final int FRAGMENT_HOME = 1;
-    private final int FRAGMENT_PROFILE = 2;
-    private final int FRAGMENT_MEDICAL_DECLARED_DATA = 3;
-    private final int FRAGMENT_COVID_DATA = 4;
-    private final int FRAGMENT_ABOUT_VIRUS = 5;
-    private final int FRAGMENT_SYMPTOMS = 6;
-    private final int FRAGMENT_PREVENTION = 7;
-    private final int FRAGMENT_LOGOUT = 8;
+    private final int FRAGMENT_PASSWORD = 2;
+    private final int FRAGMENT_PROFILE = 3;
+    private final int FRAGMENT_MEDICAL_DECLARED_DATA = 4;
+    private final int FRAGMENT_COVID_DATA = 5;
+    private final int FRAGMENT_ABOUT_VIRUS = 6;
+    private final int FRAGMENT_SYMPTOMS = 7;
+    private final int FRAGMENT_PREVENTION = 8;
+    private final int FRAGMENT_LOGOUT = 9;
 
     private int mCurrentFragment = FRAGMENT_LOGIN;
 
@@ -107,6 +109,13 @@ public class MainActivity extends AppCompatActivity
                 if (mCurrentFragment != FRAGMENT_LOGIN) {
                     replaceFragment(new FragmentLogin());
                     mCurrentFragment = FRAGMENT_LOGIN;
+                }
+                break;
+
+            case R.id.navigation_password:
+                if (mCurrentFragment != FRAGMENT_PASSWORD) {
+                    replaceFragment(new FragmentPassword());
+                    mCurrentFragment = FRAGMENT_PASSWORD;
                 }
                 break;
             case R.id.navigation_profile:
