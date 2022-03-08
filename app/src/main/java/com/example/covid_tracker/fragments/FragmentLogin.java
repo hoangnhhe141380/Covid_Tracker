@@ -23,6 +23,7 @@ public class FragmentLogin extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        getActivity().setTitle("SIGN UP - STEP 1/2");
         View view = inflater.inflate(R.layout.layout_fragment_login, container, false);
 
         tvSkip = (TextView) view.findViewById(R.id.tv_skip);

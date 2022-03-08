@@ -16,6 +16,7 @@ public class FragmentPrevention extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        getActivity().setTitle("PREVENTION");
         return inflater.inflate(R.layout.layout_fragment_prevention, container, false);
     }
 }
