@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "986687206688",
+    "firebase_url": "https://covid-tracker-63257-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "covid-tracker-63257",
+    "storage_bucket": "covid-tracker-63257.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986687206688:android:96d0d386bfb4c213d61345",
+        "android_client_info": {
+          "package_name": "com.example.covid_tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986687206688-fr61qvqm6t5q23k7l1bnloqegcaevahf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.covid_tracker",
+            "certificate_hash": "22711bde2a9cc64c010de762993b2b904995c5d3"
+          }
+        },
+        {
+          "client_id": "986687206688-h57920bqs7dtad1octrjcdm3st4utf0e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHtCruAAlTSEIm4uBn0djv1mAVmC57oNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986687206688-h57920bqs7dtad1octrjcdm3st4utf0e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
