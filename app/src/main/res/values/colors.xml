@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#FFFFFFFF</color>
     <color name="colorPrimaryDark">#121212</color>
-    <color name="background_color">#fef5f3</color>
+    <color name="colorButtonLogin">#2eb18d</color>
+    <color name="backgroundColor">#fef5f3</color>
+    <color name="resendOtp">#FF0000</color>
 </resources>

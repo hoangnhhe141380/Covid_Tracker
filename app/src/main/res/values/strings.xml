@@ -26,4 +26,7 @@
     <string name="login">Login</string>
     <string name="medical_declared_data">Medical Declared Data</string>
     <string name="covid_data">Covid Data</string>
+    <string name="txt_lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book Lorem Ipsum has been .</string>
+    <string name="txt_title_symptoms">What are Corona virus Symptoms?</string>
+    <string name="txt_login_button">Get OTP</string>
 </resources>

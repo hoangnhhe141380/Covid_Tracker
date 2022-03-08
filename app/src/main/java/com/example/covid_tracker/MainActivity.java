@@ -9,12 +9,21 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Button;
 
+import com.example.covid_tracker.fragments.FragmentAboutVirus;
+import com.example.covid_tracker.fragments.FragmentCovidData;
+import com.example.covid_tracker.fragments.FragmentHome;
 import com.example.covid_tracker.fragments.FragmentLogin;
+import com.example.covid_tracker.fragments.FragmentLogout;
+import com.example.covid_tracker.fragments.FragmentMedicalDeclaredData;
+import com.example.covid_tracker.fragments.FragmentPrevention;
+import com.example.covid_tracker.fragments.FragmentProfile;
+import com.example.covid_tracker.fragments.FragmentSymptoms;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;
@@ -35,10 +44,12 @@ public class MainActivity extends AppCompatActivity
     private final int FRAGMENT_LOGIN = 0;
     private final int FRAGMENT_HOME = 1;
     private final int FRAGMENT_PROFILE = 2;
-    private final int FRAGMENT_NEWEST_DATA = 3;
-    private final int FRAGMENT_ABOUT_VIRUS = 4;
-    private final int FRAGMENT_SYMPTOMS = 5;
-    private final int FRAGMENT_PREVENTION = 6;
+    private final int FRAGMENT_MEDICAL_DECLARED_DATA = 3;
+    private final int FRAGMENT_COVID_DATA = 4;
+    private final int FRAGMENT_ABOUT_VIRUS = 5;
+    private final int FRAGMENT_SYMPTOMS = 6;
+    private final int FRAGMENT_PREVENTION = 7;
+    private final int FRAGMENT_LOGOUT = 8;
 
     private int mCurrentFragment = FRAGMENT_LOGIN;
 
@@ -48,6 +59,7 @@ public class MainActivity extends AppCompatActivity
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private NavigationView navigationView;
 
+    @SuppressLint("ResourceAsColor")
     private void bindingView() {
         //Handle binding data for navigation view
         toolbar = findViewById(R.id.main_toolbar);
@@ -61,6 +73,7 @@ public class MainActivity extends AppCompatActivity
                         R.string.open_nav_drawer,
                         R.string.close_nav_drawer);
         mDrawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.getDrawerArrowDrawable().setColor(R.color.black);
         actionBarDrawerToggle.syncState();
 
         navigationView = findViewById(R.id.nav_view);
@@ -86,32 +99,60 @@ public class MainActivity extends AppCompatActivity
         switch (id) {
             case R.id.navigation_home:
                 if (mCurrentFragment != FRAGMENT_HOME) {
+                    replaceFragment(new FragmentHome());
+                    mCurrentFragment = FRAGMENT_HOME;
+                }
+                break;
+            case R.id.navigation_login:
+                if (mCurrentFragment != FRAGMENT_LOGIN) {
                     replaceFragment(new FragmentLogin());
                     mCurrentFragment = FRAGMENT_LOGIN;
                 }
                 break;
-            case R.id.navigation_login:
-
-                break;
             case R.id.navigation_profile:
-
+                if (mCurrentFragment != FRAGMENT_PROFILE) {
+                    replaceFragment(new FragmentProfile());
+                    mCurrentFragment = FRAGMENT_PROFILE;
+                }
                 break;
             case R.id.navigation_medical_declared_data:
-
+                if (mCurrentFragment != FRAGMENT_MEDICAL_DECLARED_DATA) {
+                    replaceFragment(new FragmentMedicalDeclaredData());
+                    mCurrentFragment = FRAGMENT_MEDICAL_DECLARED_DATA;
+                }
                 break;
             case R.id.navigation_covid_data:
-
+                if (mCurrentFragment != FRAGMENT_COVID_DATA) {
+                    replaceFragment(new FragmentCovidData());
+                    mCurrentFragment = FRAGMENT_COVID_DATA;
+                }
                 break;
             case R.id.navigation_about_virus:
-
+                if (mCurrentFragment != FRAGMENT_ABOUT_VIRUS) {
+                    replaceFragment(new FragmentAboutVirus());
+                    mCurrentFragment = FRAGMENT_ABOUT_VIRUS;
+                }
                 break;
             case R.id.navigation_symptoms:
-
+                if (mCurrentFragment != FRAGMENT_SYMPTOMS) {
+                    replaceFragment(new FragmentSymptoms());
+                    mCurrentFragment = FRAGMENT_SYMPTOMS;
+                }
                 break;
             case R.id.navigation_prevention:
-
+                if (mCurrentFragment != FRAGMENT_PREVENTION) {
+                    replaceFragment(new FragmentPrevention());
+                    mCurrentFragment = FRAGMENT_PREVENTION;
+                }
+                break;
+            case R.id.navigation_logout:
+                if (mCurrentFragment != FRAGMENT_LOGOUT) {
+                    replaceFragment(new FragmentLogout());
+                    mCurrentFragment = FRAGMENT_LOGOUT;
+                }
                 break;
             default:
+                replaceFragment(new FragmentLogin());
         }
 
         mDrawerLayout.closeDrawer(GravityCompat.START);
