@@ -16,7 +16,7 @@ public class FragmentAboutVirus extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        getActivity().setTitle("ABOUT VIRUS");
+        getActivity().setTitle("About Virus");
         return inflater.inflate(R.layout.layout_fragment_about_virus, container, false);
     }
 }

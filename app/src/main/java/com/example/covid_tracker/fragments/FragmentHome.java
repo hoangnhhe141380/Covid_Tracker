@@ -16,7 +16,7 @@ public class FragmentHome extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        getActivity().setTitle("COVID TRACKER");
+        getActivity().setTitle("Covid Tracker");
         return inflater.inflate(R.layout.layout_fragment_home, container, false);
     }
 }

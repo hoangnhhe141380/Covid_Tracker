@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     tools:openDrawer="start"
-    android:id="@+id/drawer_layout">
+    android:id="@+id/drawer_layout"
+    >
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"

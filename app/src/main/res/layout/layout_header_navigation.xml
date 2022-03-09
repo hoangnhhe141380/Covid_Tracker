@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
-    android:orientation="vertical"
+    android:layout_height="190dp"
+    android:background="@drawable/gradient_color"
     android:gravity="center"
-    android:background="@color/design_default_color_primary_dark">
+    android:orientation="vertical">
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@mipmap/ic_launcher" />
-
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/i_avatar"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="5dp"
         android:text="Username"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        android:padding="5dp"
-        />
+        android:textSize="24dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phone number"
         android:padding="5dp"
-        />
-
+        android:text="Phone number"
+        android:textSize="13dp" />
 
 
 </LinearLayout>

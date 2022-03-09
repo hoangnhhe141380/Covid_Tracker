@@ -16,7 +16,7 @@ public class FragmentCovidData extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        getActivity().setTitle("COVID DATA");
+        getActivity().setTitle("Covid Data");
         return inflater.inflate(R.layout.layout_fragment_covid_data, container, false);
     }
 }

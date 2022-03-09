@@ -58,28 +58,4 @@ public class FragmentSymptoms extends Fragment {
         listSymptoms.add(new Symptom(R.drawable.i_s6, "Kidney Failure", "Lorem abasdf"));
         return listSymptoms;
     }
-
-    //Handle column spacing for grid layout
-    public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
-        private int space;
-
-        public SpacesItemDecoration(int space) {
-            this.space = space;
-        }
-
-        @Override
-        public void getItemOffsets(Rect outRect, View view,
-                                   RecyclerView parent, RecyclerView.State state) {
-            outRect.left = space;
-            outRect.right = space;
-            outRect.bottom = space;
-
-            // Add top margin only for the first item to avoid double space between items
-            if (parent.getChildLayoutPosition(view) == 0) {
-                outRect.top = space;
-            } else {
-                outRect.top = 0;
-            }
-        }
-    }
 }

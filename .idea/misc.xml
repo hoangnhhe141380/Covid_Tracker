@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/drawable-anydpi-v24/ic_home.xml" value="0.2611111111111111" />
+        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/drawable-anydpi-v24/ic_login.xml" value="0.2611111111111111" />
+        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/drawable/gradient_color.xml" value="0.3770833333333333" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/fragment_login.xml" value="0.2758152173913043" />
+        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/header_navigation_color.xml" value="0.28125" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_about_virus.xml" value="0.3029891304347826" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_covid_data.xml" value="0.3029891304347826" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_home.xml" value="0.3029891304347826" />
@@ -12,13 +16,14 @@
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_logout.xml" value="0.3029891304347826" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_medical_declared_data.xml" value="0.3029891304347826" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_password.xml" value="0.3029891304347826" />
-        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_prevention.xml" value="0.3029891304347826" />
+        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_prevention.xml" value="0.33" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_profile.xml" value="0.3029891304347826" />
-        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_symptoms.xml" value="0.25" />
-        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_header_navigation.xml" value="0.25" />
+        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_symptoms.xml" value="0.1" />
+        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_header_navigation.xml" value="0.1" />
+        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_prevention_data.xml" value="0.3567708333333333" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_symptoms_data.xml" value="0.3029891304347826" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/menu/menu.xml" value="0.35260416666666666" />
-        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/menu/navigation_menu.xml" value="0.3567708333333333" />
+        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/menu/navigation_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

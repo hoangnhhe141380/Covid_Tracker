@@ -14,8 +14,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Button;
 
 import com.example.covid_tracker.fragments.FragmentAboutVirus;
 import com.example.covid_tracker.fragments.FragmentCovidData;
@@ -29,14 +27,6 @@ import com.example.covid_tracker.fragments.FragmentProfile;
 import com.example.covid_tracker.fragments.FragmentSymptoms;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -44,7 +34,7 @@ public class MainActivity extends AppCompatActivity
     private final String API_URL = "https://api.covid19api.com/";
     private final String API_URL_SUMMARY = "https://corona.lmao.ninja/v2/";
 
-    private final int DELAYS_TIME = 2000;
+    private final int SPLASH_TIME_OUT = 2000;
 
     private final int FRAGMENT_LOGIN = 0;
     private final int FRAGMENT_HOME = 1;
@@ -63,7 +53,6 @@ public class MainActivity extends AppCompatActivity
     private Toolbar toolbar;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private NavigationView navigationView;
-    private Handler handler;
 
     @SuppressLint("ResourceAsColor")
     private void bindingView() {
@@ -93,16 +82,6 @@ public class MainActivity extends AppCompatActivity
 
         bindingView();
         replaceFragment(new FragmentLogin());
-//        navigationView.getMenu().findItem(R.id.navigation_home).setChecked(true);
-
-        //Handle delay 2s before launching first activity
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent i=new Intent(MainActivity.this, MainActivity.class);
-                startActivity(i);
-            }
-        }, DELAYS_TIME);
     }
 
 

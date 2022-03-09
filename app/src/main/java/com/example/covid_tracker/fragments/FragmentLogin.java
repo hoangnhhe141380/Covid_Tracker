@@ -30,7 +30,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class FragmentLogin extends Fragment implements View.OnClickListener {
+public class FragmentLogin extends Fragment {
 
     public static final String TAG = FragmentLogin.class.getName();
     private final String COUNTRY_CODE = "+84";
@@ -42,7 +42,7 @@ public class FragmentLogin extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        getActivity().setTitle("SIGN UP - STEP 1/2");
+        getActivity().setTitle("Sign Up - Step 1/2");
         View view = inflater.inflate(R.layout.layout_fragment_login, container, false);
 
         tvSkip = (TextView) view.findViewById(R.id.tv_skip);
@@ -51,8 +51,6 @@ public class FragmentLogin extends Fragment implements View.OnClickListener {
         bindingAction();
 
         //Handle on click listener event for tvSkip to navigate to home fragment
-        tvSkip.setOnClickListener(this);
-
 
         //Should add on click listener event for btnLogin to navigate to password fragment
 
@@ -124,9 +122,4 @@ public class FragmentLogin extends Fragment implements View.OnClickListener {
                 });
     }
 
-    //Handle text view Skip on click listener
-    @Override
-    public void onClick(View view) {
-        Navigation.findNavController(view).navigate(R.id.tv_skip);
-    }
 }

@@ -64,6 +64,7 @@
             android:id="@+id/rcv_symptoms"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:translationY="-80dp" />
+            android:translationY="-80dp"
+            />
     </LinearLayout>
 </ScrollView>

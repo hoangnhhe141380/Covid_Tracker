@@ -16,7 +16,7 @@ public class FragmentMedicalDeclaredData extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        getActivity().setTitle("MEDICAL DECLARED DATA");
+        getActivity().setTitle("Medical Declared Data");
         return inflater.inflate(R.layout.layout_fragment_medical_declared_data, container, false);
     }
 }
