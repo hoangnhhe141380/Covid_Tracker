@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
+import com.example.covid_tracker.MainActivity;
 import com.example.covid_tracker.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -38,6 +39,7 @@ public class FragmentLogin extends Fragment {
     private Button btnLogin;
     private TextView txtPhoneNumberLogin;
     private FirebaseAuth mAuth;
+    private MainActivity mainActivity;
 
     @Nullable
     @Override
@@ -45,13 +47,21 @@ public class FragmentLogin extends Fragment {
         getActivity().setTitle("Sign Up - Step 1/2");
         View view = inflater.inflate(R.layout.layout_fragment_login, container, false);
 
-        tvSkip = (TextView) view.findViewById(R.id.tv_skip);
+        tvSkip = view.findViewById(R.id.tv_skip);
         btnLogin = view.findViewById(R.id.btn_login);
         txtPhoneNumberLogin = view.findViewById(R.id.txt_phone_number_login);
         bindingAction();
 
         //Handle on click listener event for tvSkip to navigate to home fragment
-
+        tvSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentHome fragment = new FragmentHome();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.content_frame, fragment);
+                transaction.commit();
+            }
+        });
         //Should add on click listener event for btnLogin to navigate to password fragment
 
         return view;
@@ -121,5 +131,4 @@ public class FragmentLogin extends Fragment {
                     }
                 });
     }
-
 }

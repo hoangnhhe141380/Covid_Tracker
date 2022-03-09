@@ -171,12 +171,11 @@ public class MainActivity extends AppCompatActivity
     }
 
     //Handle replace fragment when click option in navigation view
-    private void replaceFragment(Fragment fragment) {
+    public void replaceFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame, fragment);
         transaction.commit();
     }
-
 
     //    public void getDataSummary() {
 //        Retrofit retrofit = new Retrofit.Builder()
