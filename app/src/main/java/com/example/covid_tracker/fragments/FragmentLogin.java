@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import com.example.covid_tracker.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,10 +30,10 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class FragmentLogin extends Fragment {
+public class FragmentLogin extends Fragment implements View.OnClickListener {
 
     public static final String TAG = FragmentLogin.class.getName();
-    private final String COUNTRY_CODE ="+84";
+    private final String COUNTRY_CODE = "+84";
     private TextView tvSkip;
     private Button btnLogin;
     private TextView txtPhoneNumberLogin;
@@ -45,22 +46,26 @@ public class FragmentLogin extends Fragment {
         View view = inflater.inflate(R.layout.layout_fragment_login, container, false);
 
         tvSkip = (TextView) view.findViewById(R.id.tv_skip);
-        btnLogin =  view.findViewById(R.id.btn_login);
+        btnLogin = view.findViewById(R.id.btn_login);
         txtPhoneNumberLogin = view.findViewById(R.id.txt_phone_number_login);
         bindingAction();
-        //Should add on click listener event for tvSkip to navigate to home fragment
+
+        //Handle on click listener event for tvSkip to navigate to home fragment
+        tvSkip.setOnClickListener(this);
+
 
         //Should add on click listener event for btnLogin to navigate to password fragment
 
         return view;
     }
+
     private void bindingAction() {
         btnLogin.setOnClickListener(this::onBtnLogin);
     }
 
     private void onBtnLogin(View view) {
         String phone = txtPhoneNumberLogin.getText().toString().trim();
-        if(phone.isEmpty()&&phone.length()!=10){
+        if (phone.isEmpty() && phone.length() != 10) {
             Toast.makeText(getActivity(), "Invalid phone number", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -119,4 +124,9 @@ public class FragmentLogin extends Fragment {
                 });
     }
 
+    //Handle text view Skip on click listener
+    @Override
+    public void onClick(View view) {
+        Navigation.findNavController(view).navigate(R.id.tv_skip);
+    }
 }
