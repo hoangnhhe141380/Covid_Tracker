@@ -5,6 +5,7 @@
     app:startDestination="@id/fragmentLogin">
 
 
+
     <fragment
         android:id="@+id/fragmentLogin"
         android:name="com.example.covid_tracker.fragments.FragmentLogin"

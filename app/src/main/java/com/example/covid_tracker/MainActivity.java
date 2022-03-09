@@ -10,7 +10,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Button;
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity
     private final String API_URL = "https://api.covid19api.com/";
     private final String API_URL_SUMMARY = "https://corona.lmao.ninja/v2/";
 
+    private final int DELAYS_TIME = 2000;
+
     private final int FRAGMENT_LOGIN = 0;
     private final int FRAGMENT_HOME = 1;
     private final int FRAGMENT_PASSWORD = 2;
@@ -55,11 +59,11 @@ public class MainActivity extends AppCompatActivity
 
     private int mCurrentFragment = FRAGMENT_LOGIN;
 
-
     private DrawerLayout mDrawerLayout;
     private Toolbar toolbar;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private NavigationView navigationView;
+    private Handler handler;
 
     @SuppressLint("ResourceAsColor")
     private void bindingView() {
@@ -90,6 +94,15 @@ public class MainActivity extends AppCompatActivity
         bindingView();
         replaceFragment(new FragmentLogin());
 //        navigationView.getMenu().findItem(R.id.navigation_home).setChecked(true);
+
+        //Handle delay 2s before launching first activity
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i=new Intent(MainActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        }, DELAYS_TIME);
     }
 
 
