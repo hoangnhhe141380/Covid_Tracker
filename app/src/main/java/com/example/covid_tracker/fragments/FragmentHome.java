@@ -28,9 +28,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FragmentHome extends Fragment {
 
-    private final String SUMMARY_URL = "https://corona.lmao.ninja/v2";
+    private final String SUMMARY_URL = "https://corona.lmao.ninja/v2/";
 
-    private ArrayList<Summary> list = new ArrayList<>();
+    private List<Summary> listSummary = new ArrayList<>();
+
     private TextView tv_date_updated;
     private TextView tv_cases;
     private TextView tv_deaths;
@@ -52,7 +53,7 @@ public class FragmentHome extends Fragment {
 
         tv_date_updated.setText(date);
 
-        //getDataSummary();
+        getDataSummary();
         return view;
     }
 
@@ -69,35 +70,42 @@ public class FragmentHome extends Fragment {
         call.enqueue(new Callback<List<Summary>>() {
             @Override
             public void onResponse(Call<List<Summary>> call, Response<List<Summary>> response) {
-                List<Summary> listSummary = response.body();
+                listSummary = response.body();
 
-                list.clear();
-                for (Summary summary : listSummary) {
-                    list.add(summary);
+                if (listSummary.isEmpty()) {
+                    tv_date_updated.setText("N/A");
+                    tv_cases.setText("N/A");
+                    tv_deaths.setText("N/A");
+                    tv_recovered.setText("N/A");
+                } else {
+                    //Get total cases, deaths and recovered
+                    long totalCases = 0;
+                    long totalDeaths = 0;
+                    long totalRecovered = 0;
+
+                    for (Summary summary : listSummary) {
+                        totalCases += summary.getCases();
+                        totalDeaths += summary.getDeaths();
+                        totalRecovered += summary.getRecovered();
+                    }
+
+                    String stringTotalCases = totalCases == 0 ? "N/A" : String.valueOf(totalCases);
+                    String stringTotalDeaths = totalDeaths == 0 ? "N/A" : String.valueOf(totalDeaths);
+                    String stringTotalRecovered = totalRecovered == 0 ? "N/A" : String.valueOf(totalRecovered);
+
+                    tv_cases.setText("Cases " + stringTotalCases);
+                    tv_deaths.setText("Deaths " +stringTotalDeaths);
+                    tv_recovered.setText("Recovered " +stringTotalRecovered);
                 }
 
-                //Get total cases, deaths and recovered
-                long totalCases = 0;
-                long totalDeaths = 0;
-                long totalRecovered = 0;
-
-                for (Summary summary : list) {
-                    totalCases += summary.getCases();
-                    totalDeaths += summary.getDeaths();
-                    totalRecovered += summary.getRecovered();
-                }
-
-                tv_cases.setText(totalCases == 0 ? "N/A" : totalCases + "");
-                tv_deaths.setText(totalDeaths == 0 ? "N/A" : totalCases + "");
-                tv_recovered.setText(totalRecovered == 0 ? "N/A" : totalCases + "");
             }
 
             @Override
             public void onFailure(Call<List<Summary>> call, Throwable t) {
-                tv_date_updated.setText("N/A");
-                tv_cases.setText("N/A");
-                tv_deaths.setText("N/A");
-                tv_recovered.setText("N/A");
+                tv_date_updated.setText(t.getMessage());
+                tv_cases.setText("Error");
+                tv_deaths.setText("Error");
+                tv_recovered.setText("Error");
             }
         });
     }

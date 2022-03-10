@@ -1,119 +1,260 @@
 package com.example.covid_tracker.model;
 
-public class Summary {
-    private long updated;
-    private String country;
-    private CountryInfo countryInfo;
-    private long cases;
-    private long todayCases;
-    private long deaths;
-    private long todayDeaths;
-    private long recovered;
-    private long todayRecovered;
-    private long active;
-    private long critical;
-    private long casesPerOneMillion;
-    private long deathsPerOneMillion;
-    private long tests;
-    private long testsPerOneMillion;
-    private long population;
-    private String continent;
-    private long oneCasePerPeople;
-    private long oneDeathPerPeople;
-    private long oneTestPerPeople;
-    private long activePerOneMillion;
-    private long recoveredPerOneMillion;
-    private long criticalPerOneMillion;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-    public long getUpdated() {
+public class Summary {
+    @SerializedName("updated")
+    @Expose
+    private Long updated;
+    @SerializedName("country")
+    @Expose
+    private String country;
+    @SerializedName("countryInfo")
+    @Expose
+    private CountryInfo countryInfo;
+    @SerializedName("cases")
+    @Expose
+    private Integer cases;
+    @SerializedName("todayCases")
+    @Expose
+    private Integer todayCases;
+    @SerializedName("deaths")
+    @Expose
+    private Integer deaths;
+    @SerializedName("todayDeaths")
+    @Expose
+    private Integer todayDeaths;
+    @SerializedName("recovered")
+    @Expose
+    private Integer recovered;
+    @SerializedName("todayRecovered")
+    @Expose
+    private Integer todayRecovered;
+    @SerializedName("active")
+    @Expose
+    private Integer active;
+    @SerializedName("critical")
+    @Expose
+    private Integer critical;
+    @SerializedName("casesPerOneMillion")
+    @Expose
+    private Integer casesPerOneMillion;
+    @SerializedName("deathsPerOneMillion")
+    @Expose
+    private Integer deathsPerOneMillion;
+    @SerializedName("tests")
+    @Expose
+    private Integer tests;
+    @SerializedName("testsPerOneMillion")
+    @Expose
+    private Integer testsPerOneMillion;
+    @SerializedName("population")
+    @Expose
+    private Integer population;
+    @SerializedName("continent")
+    @Expose
+    private String continent;
+    @SerializedName("oneCasePerPeople")
+    @Expose
+    private Integer oneCasePerPeople;
+    @SerializedName("oneDeathPerPeople")
+    @Expose
+    private Integer oneDeathPerPeople;
+    @SerializedName("oneTestPerPeople")
+    @Expose
+    private Integer oneTestPerPeople;
+    @SerializedName("activePerOneMillion")
+    @Expose
+    private Double activePerOneMillion;
+    @SerializedName("recoveredPerOneMillion")
+    @Expose
+    private Double recoveredPerOneMillion;
+    @SerializedName("criticalPerOneMillion")
+    @Expose
+    private Double criticalPerOneMillion;
+
+    public Long getUpdated() {
         return updated;
+    }
+
+    public void setUpdated(Long updated) {
+        this.updated = updated;
     }
 
     public String getCountry() {
         return country;
     }
 
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
     public CountryInfo getCountryInfo() {
         return countryInfo;
     }
 
-    public long getCases() {
+    public void setCountryInfo(CountryInfo countryInfo) {
+        this.countryInfo = countryInfo;
+    }
+
+    public Integer getCases() {
         return cases;
     }
 
-    public long getTodayCases() {
+    public void setCases(Integer cases) {
+        this.cases = cases;
+    }
+
+    public Integer getTodayCases() {
         return todayCases;
     }
 
-    public long getDeaths() {
+    public void setTodayCases(Integer todayCases) {
+        this.todayCases = todayCases;
+    }
+
+    public Integer getDeaths() {
         return deaths;
     }
 
-    public long getTodayDeaths() {
+    public void setDeaths(Integer deaths) {
+        this.deaths = deaths;
+    }
+
+    public Integer getTodayDeaths() {
         return todayDeaths;
     }
 
-    public long getRecovered() {
+    public void setTodayDeaths(Integer todayDeaths) {
+        this.todayDeaths = todayDeaths;
+    }
+
+    public Integer getRecovered() {
         return recovered;
     }
 
-    public long getTodayRecovered() {
+    public void setRecovered(Integer recovered) {
+        this.recovered = recovered;
+    }
+
+    public Integer getTodayRecovered() {
         return todayRecovered;
     }
 
-    public long getActive() {
+    public void setTodayRecovered(Integer todayRecovered) {
+        this.todayRecovered = todayRecovered;
+    }
+
+    public Integer getActive() {
         return active;
     }
 
-    public long getCritical() {
+    public void setActive(Integer active) {
+        this.active = active;
+    }
+
+    public Integer getCritical() {
         return critical;
     }
 
-    public long getCasesPerOneMillion() {
+    public void setCritical(Integer critical) {
+        this.critical = critical;
+    }
+
+    public Integer getCasesPerOneMillion() {
         return casesPerOneMillion;
     }
 
-    public long getDeathsPerOneMillion() {
+    public void setCasesPerOneMillion(Integer casesPerOneMillion) {
+        this.casesPerOneMillion = casesPerOneMillion;
+    }
+
+    public Integer getDeathsPerOneMillion() {
         return deathsPerOneMillion;
     }
 
-    public long getTests() {
+    public void setDeathsPerOneMillion(Integer deathsPerOneMillion) {
+        this.deathsPerOneMillion = deathsPerOneMillion;
+    }
+
+    public Integer getTests() {
         return tests;
     }
 
-    public long getTestsPerOneMillion() {
+    public void setTests(Integer tests) {
+        this.tests = tests;
+    }
+
+    public Integer getTestsPerOneMillion() {
         return testsPerOneMillion;
     }
 
-    public long getPopulation() {
+    public void setTestsPerOneMillion(Integer testsPerOneMillion) {
+        this.testsPerOneMillion = testsPerOneMillion;
+    }
+
+    public Integer getPopulation() {
         return population;
+    }
+
+    public void setPopulation(Integer population) {
+        this.population = population;
     }
 
     public String getContinent() {
         return continent;
     }
 
-    public long getOneCasePerPeople() {
+    public void setContinent(String continent) {
+        this.continent = continent;
+    }
+
+    public Integer getOneCasePerPeople() {
         return oneCasePerPeople;
     }
 
-    public long getOneDeathPerPeople() {
+    public void setOneCasePerPeople(Integer oneCasePerPeople) {
+        this.oneCasePerPeople = oneCasePerPeople;
+    }
+
+    public Integer getOneDeathPerPeople() {
         return oneDeathPerPeople;
     }
 
-    public long getOneTestPerPeople() {
+    public void setOneDeathPerPeople(Integer oneDeathPerPeople) {
+        this.oneDeathPerPeople = oneDeathPerPeople;
+    }
+
+    public Integer getOneTestPerPeople() {
         return oneTestPerPeople;
     }
 
-    public long getActivePerOneMillion() {
+    public void setOneTestPerPeople(Integer oneTestPerPeople) {
+        this.oneTestPerPeople = oneTestPerPeople;
+    }
+
+    public Double getActivePerOneMillion() {
         return activePerOneMillion;
     }
 
-    public long getRecoveredPerOneMillion() {
+    public void setActivePerOneMillion(Double activePerOneMillion) {
+        this.activePerOneMillion = activePerOneMillion;
+    }
+
+    public Double getRecoveredPerOneMillion() {
         return recoveredPerOneMillion;
     }
 
-    public long getCriticalPerOneMillion() {
+    public void setRecoveredPerOneMillion(Double recoveredPerOneMillion) {
+        this.recoveredPerOneMillion = recoveredPerOneMillion;
+    }
+
+    public Double getCriticalPerOneMillion() {
         return criticalPerOneMillion;
+    }
+
+    public void setCriticalPerOneMillion(Double criticalPerOneMillion) {
+        this.criticalPerOneMillion = criticalPerOneMillion;
     }
 }
