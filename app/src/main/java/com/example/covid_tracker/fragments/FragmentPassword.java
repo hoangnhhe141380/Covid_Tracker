@@ -30,13 +30,14 @@ public class FragmentPassword extends Fragment {
     private String phoneNumber;
     private String verificationId;
     private FirebaseAuth mAuth;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getActivity().setTitle("Sign In - Step 2/2");
         View view = inflater.inflate(R.layout.layout_fragment_password, container, false);
         Bundle bundle = this.getArguments();
-        if(null!=bundle){
+        if (null != bundle) {
             phoneNumber = bundle.getString("phoneNumber");
             verificationId = bundle.getString("verificationId");
         }
@@ -46,18 +47,18 @@ public class FragmentPassword extends Fragment {
         return view;
     }
 
-    private void bindingView(View view){
+    private void bindingView(View view) {
         txtOtp = view.findViewById(R.id.txt_otp);
         btnLogin = view.findViewById(R.id.btn_login);
     }
 
-    private void bindingAction(){
+    private void bindingAction() {
         btnLogin.setOnClickListener(this::onVerify);
     }
 
     private void onVerify(View view) {
         String otp = txtOtp.getText().toString();
-        if(!(otp.length()==6)){
+        if (!(otp.length() == 6)) {
             //TODO
             return;
         }
