@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    android:orientation="vertical"
     android:padding="20dp">
 
     <ImageView
@@ -14,6 +14,12 @@
         android:layout_gravity="center_horizontal"
         android:clickable="false"
         android:translationY="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_login1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/i_covid" />
 
     <TextView
@@ -21,37 +27,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
         android:text="@string/text_login1"
         android:textSize="17dp"
-        android:translationY="50dp"
-        android:gravity="center"/>
+        android:translationY="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_phone_number_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txt_phone_number_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:hint="Phone number"
         android:inputType="phone"
-        android:translationY="100dp"
-        android:hint="Phone number"/>
+        android:translationY="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:translationY="120dp"
         android:background="@color/colorButtonLogin"
+        android:text="@string/txt_login_button"
         android:textColor="@color/white"
-        android:text="@string/txt_login_button" />
+        android:translationY="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.527" />
 
-    <TextView
-        android:id="@+id/tv_skip"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <Button
+        android:id="@+id/btn_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:background="@drawable/border_button"
         android:gravity="bottom|center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:padding="0dp"
         android:text="@string/skip"
-        android:textSize="20sp"
         android:textColor="@color/colorButtonLogin"
-        android:textStyle="bold"
-        android:clickable="true"
-        android:focusable="true" />
-</LinearLayout>
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

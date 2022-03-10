@@ -10,16 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covid_tracker.R;
-import com.example.covid_tracker.model.Symptom;
+import com.example.covid_tracker.model.Prevention;
 
 import java.util.List;
 
 public class PreventionAdapter extends RecyclerView.Adapter<PreventionAdapter.PreventionViewHolder>{
 
-    private List<Symptom> listSymptoms;
+    private List<Prevention> listSymptoms;
 
-
-    public PreventionAdapter(List<Symptom> listSymptoms) {
+    public PreventionAdapter(List<Prevention> listSymptoms) {
         this.listSymptoms = listSymptoms;
     }
 
@@ -27,13 +26,13 @@ public class PreventionAdapter extends RecyclerView.Adapter<PreventionAdapter.Pr
     @Override
     public PreventionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).
-                inflate(R.layout.layout_symptoms_data, parent, false);
+                inflate(R.layout.layout_prevention_data, parent, false);
         return new PreventionViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PreventionViewHolder holder, int position) {
-        Symptom symptom = listSymptoms.get(position);
+        Prevention symptom = listSymptoms.get(position);
         if (symptom == null) return;
 
         holder.i_prevention.setImageResource(symptom.getImage());
@@ -56,9 +55,8 @@ public class PreventionAdapter extends RecyclerView.Adapter<PreventionAdapter.Pr
             super(itemView);
 
             i_prevention = itemView.findViewById(R.id.i_prevention);
-            tv_title = itemView.findViewById(R.id.tv_symptom_title);
-            tv_description = itemView.findViewById(R.id.tv_symptom_description);
-
+            tv_title = itemView.findViewById(R.id.tv_prevention_title);
+            tv_description = itemView.findViewById(R.id.tv_prevention_description);
 
         }
     }

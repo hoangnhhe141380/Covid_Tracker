@@ -16,7 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covid_tracker.MainActivity;
 import com.example.covid_tracker.R;
+import com.example.covid_tracker.adapter.PreventionAdapter;
 import com.example.covid_tracker.adapter.SymptomsAdapter;
+import com.example.covid_tracker.model.Prevention;
 import com.example.covid_tracker.model.Symptom;
 
 import java.util.ArrayList;
@@ -42,19 +44,19 @@ public class FragmentPrevention extends Fragment{
         GridLayoutManager gridLayoutManager = new GridLayoutManager(mainActivity, NUMBER_OF_COLUMN);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        SymptomsAdapter adapter = new SymptomsAdapter(getListSymptoms());
+        PreventionAdapter adapter = new PreventionAdapter(getListSymptoms());
         recyclerView.setAdapter(adapter);
 
         return view;
     }
 
     //Handle add data for recycle symptoms view
-    private List<Symptom> getListSymptoms() {
-        List<Symptom> listSymptoms = new ArrayList<>();
-        listSymptoms.add(new Symptom(R.drawable.i_p1, "Wear A Face Mask", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit ipsum dolor."));
-        listSymptoms.add(new Symptom(R.drawable.i_p2, "Wash Your Hands", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit ipsum dolor."));
-        listSymptoms.add(new Symptom(R.drawable.i_p3, "Avoid Animals Contact", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit ipsum dolor."));
-        listSymptoms.add(new Symptom(R.drawable.i_p4, "Well Done Cooking", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit ipsum dolor."));
+    private List<Prevention> getListSymptoms() {
+        List<Prevention> listSymptoms = new ArrayList<>();
+        listSymptoms.add(new Prevention(R.drawable.i_p1, "Wear A Face Mask", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit ipsum dolor."));
+        listSymptoms.add(new Prevention(R.drawable.i_p2, "Wash Your Hands", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit ipsum dolor."));
+        listSymptoms.add(new Prevention(R.drawable.i_p3, "Avoid Animals Contact", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit ipsum dolor."));
+        listSymptoms.add(new Prevention(R.drawable.i_p4, "Well Done Cooking", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit ipsum dolor."));
         return listSymptoms;
     }
 

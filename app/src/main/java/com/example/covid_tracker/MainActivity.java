@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity
     private final int FRAGMENT_PREVENTION = 8;
     private final int FRAGMENT_LOGOUT = 9;
 
-    private int mCurrentFragment = FRAGMENT_LOGIN;
+    public int mCurrentFragment = FRAGMENT_LOGIN;
 
     private DrawerLayout mDrawerLayout;
     private Toolbar toolbar;
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 break;
             default:
-                replaceFragment(new FragmentLogin());
+                break;
         }
 
         mDrawerLayout.closeDrawer(GravityCompat.START);

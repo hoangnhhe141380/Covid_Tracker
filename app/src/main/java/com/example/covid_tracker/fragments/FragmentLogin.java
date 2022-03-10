@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,9 +36,11 @@ public class FragmentLogin extends Fragment {
 
     public static final String TAG = FragmentLogin.class.getName();
     private final String COUNTRY_CODE = "+84";
-    private TextView tvSkip;
+    private final int FRAGMENT_HOME = 1;
+
+    private Button btnSkip;
     private Button btnLogin;
-    private TextView txtPhoneNumberLogin;
+    private EditText txtPhoneNumberLogin;
     private FirebaseAuth mAuth;
     private MainActivity mainActivity;
 
@@ -47,21 +50,13 @@ public class FragmentLogin extends Fragment {
         getActivity().setTitle("Sign Up - Step 1/2");
         View view = inflater.inflate(R.layout.layout_fragment_login, container, false);
 
-        tvSkip = view.findViewById(R.id.tv_skip);
+        btnSkip = view.findViewById(R.id.btn_skip);
         btnLogin = view.findViewById(R.id.btn_login);
         txtPhoneNumberLogin = view.findViewById(R.id.txt_phone_number_login);
         bindingAction();
 
         //Handle on click listener event for tvSkip to navigate to home fragment
-        tvSkip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentHome fragment = new FragmentHome();
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.content_frame, fragment);
-                transaction.commit();
-            }
-        });
+
         //Should add on click listener event for btnLogin to navigate to password fragment
 
         return view;
@@ -69,6 +64,7 @@ public class FragmentLogin extends Fragment {
 
     private void bindingAction() {
         btnLogin.setOnClickListener(this::onBtnLogin);
+        btnSkip.setOnClickListener(this::onBtnSkip);
     }
 
     private void onBtnLogin(View view) {
@@ -79,6 +75,12 @@ public class FragmentLogin extends Fragment {
         }
         String phoneNumber = COUNTRY_CODE + phone.substring(1);
         OnVerificationStateChangedCallbacks(phoneNumber);
+    }
+
+    private void onBtnSkip(View view) {
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.content_frame, new FragmentHome());
+        transaction.commit();
     }
 
     private void OnVerificationStateChangedCallbacks(String phoneNumber) {
