@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.covid_tracker.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -58,7 +59,7 @@ public class FragmentPassword extends Fragment {
 
     private void onVerify(View view) {
         String otp = txtOtp.getText().toString();
-        if (!(otp.length() == 6)) {
+        if (otp.length() != 6) {
             //TODO
             return;
         }
@@ -79,6 +80,9 @@ public class FragmentPassword extends Fragment {
                             FirebaseUser user = task.getResult().getUser();
                             // Update UI
                             //TODO
+                            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                            transaction.replace(R.id.content_frame, new FragmentHome());
+                            transaction.commit();
                         } else {
                             // Sign in failed, display a message and update the UI
                             Log.w(TAG, "signInWithCredential:failure", task.getException());

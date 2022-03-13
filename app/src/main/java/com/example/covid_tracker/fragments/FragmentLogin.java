@@ -43,15 +43,17 @@ public class FragmentLogin extends Fragment {
     private EditText txtPhoneNumberLogin;
     private FirebaseAuth mAuth;
     private MainActivity mainActivity;
+    private TextView tv_login_error;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getActivity().setTitle("Sign Up - Step 1/2");
         View view = inflater.inflate(R.layout.layout_fragment_login, container, false);
-
+        mAuth = FirebaseAuth.getInstance();
         btnSkip = view.findViewById(R.id.btn_skip);
         btnLogin = view.findViewById(R.id.btn_login);
+        tv_login_error = view.findViewById(R.id.tv_login_error);
         txtPhoneNumberLogin = view.findViewById(R.id.txt_phone_number_login);
         bindingAction();
 
@@ -65,12 +67,18 @@ public class FragmentLogin extends Fragment {
     private void bindingAction() {
         btnLogin.setOnClickListener(this::onBtnLogin);
         btnSkip.setOnClickListener(this::onBtnSkip);
+        txtPhoneNumberLogin.setOnClickListener(this::onTxtPhoneNumberLogin);
+    }
+
+
+    private void onTxtPhoneNumberLogin(View view) {
+        tv_login_error.setText("");
     }
 
     private void onBtnLogin(View view) {
         String phone = txtPhoneNumberLogin.getText().toString().trim();
-        if (phone.isEmpty() && phone.length() != 10) {
-            Toast.makeText(getActivity(), "Invalid phone number", Toast.LENGTH_SHORT).show();
+        if (phone.isEmpty() || phone.length() != 10) {
+            tv_login_error.setText("Invalid phone number! Please try again!");
             return;
         }
         String phoneNumber = COUNTRY_CODE + phone.substring(1);
@@ -97,13 +105,20 @@ public class FragmentLogin extends Fragment {
 
                             @Override
                             public void onVerificationFailed(@NonNull FirebaseException e) {
-                                Toast.makeText(getActivity(), "Verification failed", Toast.LENGTH_SHORT).show();
+                                tv_login_error.setText("Verification Failed! Please try again");
                             }
 
                             @Override
                             public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                 super.onCodeSent(verificationId, forceResendingToken);
-                                //goToOtpActivity(phone_number, verificationId);
+                                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                                Bundle bundle = new Bundle();
+                                bundle.putString("verificationId",verificationId);
+                                bundle.putString("phoneNumber",phoneNumber);
+                                FragmentPassword fragmentPassword = new FragmentPassword();
+                                fragmentPassword.setArguments(bundle);
+                                transaction.replace(R.id.content_frame, fragmentPassword);
+                                transaction.commit();
                             }
                         })          // OnVerificationStateChangedCallbacks
                         .build();
