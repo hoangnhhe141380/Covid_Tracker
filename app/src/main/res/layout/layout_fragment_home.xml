@@ -2,19 +2,18 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/layout_home"
-    android:orientation="vertical"
-    android:padding="12dp"
     android:background="@color/backgroundColor"
-    android:fillViewport="true" >
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:padding="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        >
+        android:layout_marginTop="10dp">
 
         <TextView
             android:id="@+id/textView"
@@ -62,53 +61,82 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
+
         <TextView
             android:id="@+id/tv_date_updated"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="140dp"
             android:fontFamily="@font/nunito_sans_semibold"
             android:gravity="left"
-            android:text="Global data"
+            android:text="Date"
+            android:textColor="#808080"
             android:textSize="12dp"
             app:layout_constraintBottom_toTopOf="@+id/tv_cases"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_covid_data_more"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.755" />
+            app:layout_constraintVertical_bias="0.916" />
 
         <TextView
             android:id="@+id/tv_cases"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/i_cases"
+            android:gravity="right|center_vertical"
+            android:padding="10dp"
+            android:paddingLeft="20dp"
+            android:text="Cases"
+            android:textSize="19dp"
             app:layout_constraintBottom_toTopOf="@+id/tv_deaths"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_deaths"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/i_deaths"
+            android:gravity="right|center_vertical"
+            android:padding="10dp"
+            android:paddingLeft="20dp"
+            android:text="Deaths"
+            android:textSize="19dp"
             app:layout_constraintBottom_toTopOf="@+id/tv_recovered"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.936" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_recovered"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="284dp"
-            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="84dp"
+            android:background="@drawable/i_recovered"
+            android:gravity="right|center_vertical"
+            android:padding="10dp"
+            android:paddingLeft="20dp"
+            android:text="Recovered"
+            android:textSize="19dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button_covid_data_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="More"
+            app:layout_constraintBottom_toTopOf="@+id/tv_cases"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.946"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.963" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

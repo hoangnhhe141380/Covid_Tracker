@@ -113,8 +113,8 @@ public class FragmentLogin extends Fragment {
                                 super.onCodeSent(verificationId, forceResendingToken);
                                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                                 Bundle bundle = new Bundle();
-                                bundle.putString("verificationId",verificationId);
-                                bundle.putString("phoneNumber",phoneNumber);
+                                bundle.putString("verificationId", verificationId);
+                                bundle.putString("phoneNumber", phoneNumber);
                                 FragmentPassword fragmentPassword = new FragmentPassword();
                                 fragmentPassword.setArguments(bundle);
                                 transaction.replace(R.id.content_frame, fragmentPassword);

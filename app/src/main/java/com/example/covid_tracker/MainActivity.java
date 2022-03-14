@@ -31,7 +31,7 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
+    private final String API_URL = "https://api.covid19api.com/";
     private final String API_URL_SUMMARY = "https://corona.lmao.ninja/v2/";
 
     private final int SPLASH_TIME_OUT = 2000;
