@@ -28,6 +28,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"
+        android:fontFamily="@font/nunito_sans_extrabold"
+
         android:text="What is Corona Virus?"
         android:textColor="@color/black"
         android:textSize="30sp"
@@ -43,6 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="4dp"
+        android:fontFamily="@font/nunito_sans_extrabold"
+
         android:layout_marginBottom="64dp"
         android:paddingHorizontal="10dp"
         android:text="@string/txt_lorem"

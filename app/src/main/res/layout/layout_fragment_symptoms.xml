@@ -28,6 +28,7 @@
             android:text="@string/txt_title_symptoms"
             android:textColor="@color/black"
             android:textSize="22sp"
+            android:fontFamily="@font/nunito_sans_extrabold"
             android:textStyle="bold"
             android:translationY="-160dp" />
 
@@ -39,6 +40,7 @@
             android:paddingHorizontal="10dp"
             android:text="@string/txt_lorem"
             android:textColor="@color/black"
+            android:fontFamily="@font/nunito_sans"
             android:translationY="-140dp" />
         <!--thêm sao cho nó căn đều-->
 
@@ -55,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:text="Corona Virus Symptoms"
+            android:fontFamily="@font/nunito_sans_extrabold"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -63,6 +66,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_symptoms"
             android:layout_width="match_parent"
+            android:fontFamily="@font/nunito_sans"
             android:layout_height="match_parent"
             android:translationY="-80dp"
             />

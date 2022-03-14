@@ -91,7 +91,8 @@
             app:layout_constraintBottom_toTopOf="@+id/tv_deaths"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/nunito_sans_extrabold"/>
 
         <TextView
             android:id="@+id/tv_deaths"
@@ -108,7 +109,8 @@
             app:layout_constraintBottom_toTopOf="@+id/tv_recovered"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/nunito_sans_extrabold"/>
 
         <TextView
             android:id="@+id/tv_recovered"
@@ -124,7 +126,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/nunito_sans_extrabold"/>
 
         <Button
             android:id="@+id/button_covid_data_more"
@@ -136,7 +139,8 @@
             app:layout_constraintHorizontal_bias="0.946"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.963" />
+            app:layout_constraintVertical_bias="0.963"
+            android:fontFamily="@font/nunito_sans_semibold"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
