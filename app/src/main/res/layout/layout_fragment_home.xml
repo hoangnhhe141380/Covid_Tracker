@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_home"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/backgroundColor"
     android:fillViewport="true"
     android:orientation="vertical"
-    android:padding="12dp">
+    android:padding="12dp"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
 
         <TextView
@@ -20,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
             android:background="@drawable/i_banner"
             android:fontFamily="@font/nunito_sans_extrabold"
             android:gravity="center_vertical"
@@ -46,36 +48,84 @@
             app:layout_constraintTop_toTopOf="@+id/textView"
             app:layout_constraintVertical_bias="0.833" />
 
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginBottom="452dp"
+            android:layout_marginBottom="20dp"
             android:fontFamily="@font/nunito_sans_extrabold"
             android:gravity="left"
             android:text="Global data"
             android:textSize="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/tv_date_updated"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@+id/tv_cases"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/nunito_sans_extrabold"
+            android:gravity="left"
+            android:text="Medical Declared Data"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_deaths2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/nunito_sans_extrabold"
+            android:gravity="left"
+            android:text="About Virus"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_deaths3"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/nunito_sans_extrabold"
+            android:gravity="left"
+            android:text="Symptoms"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_deaths4"
+            app:layout_constraintEnd_toStartOf="@+id/button_covid_data_more4"
+            app:layout_constraintHorizontal_bias="0.049"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/nunito_sans_extrabold"
+            android:gravity="left"
+            android:text="Prevention"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_deaths5"
+            app:layout_constraintEnd_toStartOf="@+id/button_covid_data_more5"
+            app:layout_constraintHorizontal_bias="0.059"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_date_updated"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="140dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
             android:fontFamily="@font/nunito_sans_semibold"
             android:gravity="left"
             android:text="Date"
             android:textColor="#808080"
             android:textSize="12dp"
             app:layout_constraintBottom_toTopOf="@+id/tv_cases"
-            app:layout_constraintEnd_toStartOf="@+id/button_covid_data_more"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.916" />
+            app:layout_constraintEnd_toStartOf="@+id/button_covid_data_more" />
 
         <TextView
             android:id="@+id/tv_cases"
@@ -113,34 +163,142 @@
             android:fontFamily="@font/nunito_sans_extrabold"/>
 
         <TextView
+            android:id="@+id/tv_deaths2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/i_declare"
+            android:fontFamily="@font/nunito_sans_extrabold"
+            android:gravity="right|center_vertical"
+            android:padding="10dp"
+            android:paddingLeft="20dp"
+            android:text="Deaths"
+            android:textSize="19dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_deaths3"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/i_banner_av"
+            android:fontFamily="@font/nunito_sans_extrabold"
+            android:gravity="right|center_vertical"
+            android:padding="10dp"
+            android:paddingLeft="20dp"
+            android:text="Deaths"
+            android:textSize="19dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
             android:id="@+id/tv_recovered"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginBottom="84dp"
+            android:layout_marginBottom="40dp"
             android:background="@drawable/i_recovered"
+            android:fontFamily="@font/nunito_sans_extrabold"
             android:gravity="right|center_vertical"
             android:padding="10dp"
             android:paddingLeft="20dp"
             android:text="Recovered"
             android:textSize="19dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            android:fontFamily="@font/nunito_sans_extrabold"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/button_covid_data_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/nunito_sans_semibold"
             android:text="More"
             app:layout_constraintBottom_toTopOf="@+id/tv_cases"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/button_covid_data_more2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:text="More"
+            app:layout_constraintBottom_toTopOf="@+id/tv_deaths2"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/button_covid_data_more3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:text="More"
+            app:layout_constraintBottom_toTopOf="@+id/tv_deaths3"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/button_covid_data_more4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:text="More"
+            app:layout_constraintBottom_toTopOf="@+id/tv_deaths4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.946"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.963"
-            android:fontFamily="@font/nunito_sans_semibold"/>
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/button_covid_data_more5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:text="More"
+            app:layout_constraintBottom_toTopOf="@+id/tv_deaths5"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_deaths4"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/i_b_sympton"
+            android:fontFamily="@font/nunito_sans_extrabold"
+            android:gravity="right|center_vertical"
+            android:padding="10dp"
+            android:paddingLeft="20dp"
+            android:text="Deaths"
+            android:textSize="19dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_deaths5"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/i_b_prevention"
+            android:fontFamily="@font/nunito_sans_extrabold"
+            android:gravity="right|center_vertical"
+            android:padding="10dp"
+            android:paddingLeft="20dp"
+            android:text="Deaths"
+            android:textSize="19dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
