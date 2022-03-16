@@ -14,6 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.chart.common.dataentry.ValueDataEntry;
+import com.anychart.charts.Pie;
 import com.example.covid_tracker.GetDataFromJson;
 import com.example.covid_tracker.MainActivity;
 import com.example.covid_tracker.R;
@@ -69,7 +74,17 @@ public class FragmentCovidData extends Fragment {
 
             }
         });
+        Pie pie = AnyChart.pie();
 
+        List<DataEntry> data = new ArrayList<>();
+        data.add(new ValueDataEntry("A", 10000));
+        data.add(new ValueDataEntry("B", 20000));
+        data.add(new ValueDataEntry("C", 5000));
+
+        pie.data(data);
+
+        AnyChartView anyChartView = (AnyChartView) view.findViewById(R.id.any_chart_view);
+        anyChartView.setChart(pie);
         return view;
     }
 
