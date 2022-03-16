@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,7 +17,6 @@ import androidx.fragment.app.Fragment;
 import com.example.covid_tracker.GetDataFromJson;
 import com.example.covid_tracker.MainActivity;
 import com.example.covid_tracker.R;
-import com.example.covid_tracker.adapter.CountryPickerAdapter;
 import com.example.covid_tracker.model.Summary;
 
 import java.util.ArrayList;
@@ -32,9 +33,13 @@ public class FragmentCovidData extends Fragment {
     private final String SUMMARY_URL = "https://corona.lmao.ninja/v2/";
 
     private List<Summary> listSummary = new ArrayList<>();
+    private List<String> listCountry = new ArrayList<>();
+
     private Spinner spinner;
-    private CountryPickerAdapter countryPickerAdapter;
     private MainActivity mainActivity;
+
+//    private CountryPickerAdapter adapter;
+    private ArrayAdapter adapter;
 
     @Nullable
     @Override
@@ -43,17 +48,20 @@ public class FragmentCovidData extends Fragment {
 
         View view = inflater.inflate(R.layout.layout_fragment_covid_data, container, false);
 
-        spinner = view.findViewById(R.id.spinner_country);
         mainActivity = (MainActivity) getActivity();
+        spinner = view.findViewById(R.id.spinner);
 
-        countryPickerAdapter = new CountryPickerAdapter(mainActivity, R.layout.item_country_selected, getListCountry());
-        spinner.setAdapter(countryPickerAdapter);
+        getListCountry();
+
+//        adapter = new CountryPickerAdapter(mainActivity, listSummary);
+        adapter = new ArrayAdapter(mainActivity, android.R.layout.simple_spinner_item, listCountry);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(mainActivity,
-                        countryPickerAdapter.getItem(i).getCountry(),
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(mainActivity, adapter.getItem(i).toString(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -61,10 +69,11 @@ public class FragmentCovidData extends Fragment {
 
             }
         });
+
         return view;
     }
 
-    public List<Summary> getListCountry() {
+    public void getListCountry() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(SUMMARY_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -78,6 +87,10 @@ public class FragmentCovidData extends Fragment {
             @Override
             public void onResponse(Call<List<Summary>> call, Response<List<Summary>> response) {
                 listSummary = response.body();
+                for(Summary summary : listSummary){
+                    listCountry.add(summary.getCountry());
+                }
+
             }
 
             @Override
@@ -85,7 +98,5 @@ public class FragmentCovidData extends Fragment {
                 listSummary = null;
             }
         });
-
-        return listSummary;
     }
 }

@@ -190,7 +190,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            android:fontFamily="@font/nunito_sans_extrabold"/>
+            android:fontFamily="@font/nunito_sans_semibold"/>
 
         <TextView
             android:id="@+id/tv_deaths"
@@ -208,7 +208,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            android:fontFamily="@font/nunito_sans_extrabold"/>
+            android:fontFamily="@font/nunito_sans_semibold"/>
 
         <TextView
             android:id="@+id/tv_deaths2"
@@ -216,7 +216,7 @@
             android:layout_height="100dp"
             android:layout_marginBottom="40dp"
             android:background="@drawable/i_declare"
-            android:fontFamily="@font/nunito_sans_extrabold"
+            android:fontFamily="@font/nunito_sans_semibold"
             android:gravity="right|center_vertical"
             android:padding="10dp"
             android:paddingLeft="20dp"
@@ -233,7 +233,7 @@
             android:layout_height="100dp"
             android:layout_marginBottom="40dp"
             android:background="@drawable/i_banner_av"
-            android:fontFamily="@font/nunito_sans_extrabold"
+            android:fontFamily="@font/nunito_sans_semibold"
             android:gravity="right|center_vertical"
             android:padding="10dp"
             android:paddingLeft="20dp"
@@ -250,7 +250,7 @@
             android:layout_height="100dp"
             android:layout_marginBottom="40dp"
             android:background="@drawable/i_recovered"
-            android:fontFamily="@font/nunito_sans_extrabold"
+            android:fontFamily="@font/nunito_sans_semibold"
             android:gravity="right|center_vertical"
             android:padding="10dp"
             android:paddingLeft="20dp"
@@ -317,7 +317,7 @@
             android:layout_height="100dp"
             android:layout_marginBottom="40dp"
             android:background="@drawable/i_b_sympton"
-            android:fontFamily="@font/nunito_sans_extrabold"
+            android:fontFamily="@font/nunito_sans_semibold"
             android:gravity="right|center_vertical"
             android:padding="10dp"
             android:paddingLeft="20dp"
@@ -334,7 +334,7 @@
             android:layout_height="100dp"
             android:layout_marginBottom="40dp"
             android:background="@drawable/i_b_prevention"
-            android:fontFamily="@font/nunito_sans_extrabold"
+            android:fontFamily="@font/nunito_sans_semibold"
             android:gravity="right|center_vertical"
             android:padding="10dp"
             android:paddingLeft="20dp"
