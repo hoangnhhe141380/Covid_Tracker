@@ -22,7 +22,7 @@
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_login.xml" value="0.33" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_logout.xml" value="0.3029891304347826" />
-        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_medical_declared_data.xml" value="0.3029891304347826" />
+        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_medical_declared_data.xml" value="0.33" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_password.xml" value="0.3029891304347826" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_prevention.xml" value="0.33" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_fragment_profile.xml" value="0.3029891304347826" />
@@ -30,6 +30,7 @@
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_header_navigation.xml" value="0.33" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_prevention_data.xml" value="0.5" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_symptoms_data.xml" value="0.33" />
+        <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/layout/layout_vaccination_data.xml" value="0.28306159420289856" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/menu/menu.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/Riel/AndroidStudioProjects/Covid_Tracker/app/src/main/res/menu/navigation_menu.xml" value="0.1" />
       </map>
