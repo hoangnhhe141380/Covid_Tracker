@@ -36,18 +36,18 @@ public class MainActivity extends AppCompatActivity
 
     private final int SPLASH_TIME_OUT = 2000;
 
-    private final int FRAGMENT_LOGIN = 0;
-    private final int FRAGMENT_HOME = 1;
-    private final int FRAGMENT_PASSWORD = 2;
-    private final int FRAGMENT_PROFILE = 3;
-    private final int FRAGMENT_MEDICAL_DECLARED_DATA = 4;
-    private final int FRAGMENT_COVID_DATA = 5;
-    private final int FRAGMENT_ABOUT_VIRUS = 6;
-    private final int FRAGMENT_SYMPTOMS = 7;
-    private final int FRAGMENT_PREVENTION = 8;
-    private final int FRAGMENT_LOGOUT = 9;
+    public static final int FRAGMENT_LOGIN = 0;
+    public static final int FRAGMENT_HOME = 1;
+    public static final int FRAGMENT_PASSWORD = 2;
+    public static final int FRAGMENT_PROFILE = 3;
+    public static final int FRAGMENT_MEDICAL_DECLARED_DATA = 4;
+    public static final int FRAGMENT_COVID_DATA = 5;
+    public static final int FRAGMENT_ABOUT_VIRUS = 6;
+    public static final int FRAGMENT_SYMPTOMS = 7;
+    public static final int FRAGMENT_PREVENTION = 8;
+    public static final int FRAGMENT_LOGOUT = 9;
 
-    public int mCurrentFragment = FRAGMENT_LOGIN;
+    public static int mCurrentFragment = FRAGMENT_LOGIN;
 
     private DrawerLayout mDrawerLayout;
     private Toolbar toolbar;
@@ -224,5 +224,7 @@ public class MainActivity extends AppCompatActivity
 //            }
 //        });
 //    }
-
+    public static void setCurrentFragment(int i) {
+        mCurrentFragment = i;
+    }
 }

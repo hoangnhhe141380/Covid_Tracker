@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.covid_tracker.GetDataFromJson;
+import com.example.covid_tracker.MainActivity;
 import com.example.covid_tracker.R;
 import com.example.covid_tracker.model.Summary;
 
@@ -40,6 +41,7 @@ public class FragmentHome extends Fragment {
     private TextView tv_cases;
     private TextView tv_deaths;
     private TextView tv_recovered;
+    private MainActivity mainActivity;
 
     @Nullable
     @Override
@@ -76,30 +78,35 @@ public class FragmentHome extends Fragment {
 
 
     private void onBtnCovidDataMore(View view) {
+        MainActivity.setCurrentFragment(5);
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame, new FragmentCovidData());
         transaction.commit();
     }
 
     private void onBtnMedicalDeclaredData(View view) {
+        MainActivity.setCurrentFragment(4);
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame, new FragmentMedicalDeclaredData());
         transaction.commit();
     }
 
     private void onBtnAboutVirus(View view) {
+        MainActivity.setCurrentFragment(6);
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame, new FragmentAboutVirus());
         transaction.commit();
     }
 
     private void onBtnSymptoms(View view) {
+        MainActivity.setCurrentFragment(7);
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame, new FragmentSymptoms());
         transaction.commit();
     }
 
     private void onBtnPrevention(View view) {
+        MainActivity.setCurrentFragment(8);
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame, new FragmentPrevention());
         transaction.commit();

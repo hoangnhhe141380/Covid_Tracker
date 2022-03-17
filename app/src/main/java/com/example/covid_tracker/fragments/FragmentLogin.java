@@ -86,6 +86,7 @@ public class FragmentLogin extends Fragment {
     }
 
     private void onBtnSkip(View view) {
+        MainActivity.setCurrentFragment(1);
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame, new FragmentHome());
         transaction.commit();
