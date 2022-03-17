@@ -34,7 +34,6 @@ public class FragmentSymptoms extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getActivity().setTitle("Symptoms");
         view = inflater.inflate(R.layout.layout_fragment_symptoms, container, false);
-
         mainActivity = (MainActivity) getActivity();
 
         recyclerView = view.findViewById(R.id.rcv_symptoms);
