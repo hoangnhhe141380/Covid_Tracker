@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ import com.example.covid_tracker.GetDataFromJson;
 import com.example.covid_tracker.MainActivity;
 import com.example.covid_tracker.R;
 import com.example.covid_tracker.model.Summary;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,8 +45,8 @@ public class FragmentCovidData extends Fragment {
     private Spinner spinner;
     private MainActivity mainActivity;
 
-//    private CountryPickerAdapter adapter;
     private ArrayAdapter adapter;
+
 
     @Nullable
     @Override
@@ -55,18 +57,276 @@ public class FragmentCovidData extends Fragment {
 
         mainActivity = (MainActivity) getActivity();
         spinner = view.findViewById(R.id.spinner);
+        ImageView img = view.findViewById(R.id.tvid);
 
-        getListCountry();
+        String[] items = new String[]{
+                "Afghanistan",
+                "Albania",
+                "Algeria",
+                "Andorra",
+                "Angola",
+                "Anguilla",
+                "Antigua and Barbuda",
+                "Argentina",
+                "Armenia",
+                "Aruba",
+                "Australia",
+                "Austria",
+                "Azerbaijan",
+                "Bahamas",
+                "Bahrain",
+                "Bangladesh",
+                "Barbados",
+                "Belarus",
+                "Belgium",
+                "Belize",
+                "Benin",
+                "Bermuda",
+                "Bhutan",
+                "Bolivia",
+                "Bosnia",
+                "Botswana",
+                "Brazil",
+                "British Virgin Islands",
+                "Brunei",
+                "Bulgaria",
+                "Burkina Faso",
+                "Burundi",
+                "Cabo Verde",
+                "Cambodia",
+                "Cameroon",
+                "Canada",
+                "Caribbean Netherlands",
+                "Cayman Islands",
+                "Central African Republic",
+                "Chad",
+                "Channel Islands",
+                "Chile",
+                "China",
+                "Colombia",
+                "Comoros",
+                "Congo",
+                "Cook Islands",
+                "Costa Rica",
+                "Croatia",
+                "Cuba",
+                "Curaçao",
+                "Cyprus",
+                "Czechia",
+                "Côte d'Ivoire",
+                "DRC",
+                "Denmark",
+                "Diamond Princess",
+                "Djibouti",
+                "Dominica",
+                "Dominican Republic",
+                "Ecuador",
+                "Egypt",
+                "El Salvador",
+                "Equatorial Guinea",
+                "Eritrea",
+                "Estonia",
+                "Ethiopia",
+                "Falkland Islands (Malvinas)",
+                "Faroe Islands",
+                "Fiji",
+                "Finland",
+                "France",
+                "French Guiana",
+                "French Polynesia",
+                "Gabon",
+                "Gambia",
+                "Georgia",
+                "Germany",
+                "Ghana",
+                "Gibraltar",
+                "Greece",
+                "Greenland",
+                "Grenada",
+                "Guadeloupe",
+                "Guatemala",
+                "Guinea",
+                "Guinea-Bissau",
+                "Guyana",
+                "Haiti",
+                "Holy See (Vatican City State)",
+                "Honduras",
+                "Hong Kong",
+                "Hungary",
+                "Iceland",
+                "India",
+                "Indonesia",
+                "Iran",
+                "Iraq",
+                "Ireland",
+                "Isle of Man",
+                "Israel",
+                "Italy",
+                "Jamaica",
+                "Japan",
+                "Jordan",
+                "Kazakhstan",
+                "Kenya",
+                "Kiribati",
+                "Kuwait",
+                "Kyrgyzstan",
+                "Lao People's Democratic Republic",
+                "Latvia",
+                "Lebanon",
+                "Lesotho",
+                "Liberia",
+                "Libyan Arab Jamahiriya",
+                "Liechtenstein",
+                "Lithuania",
+                "Luxembourg",
+                "MS Zaandam",
+                "Macao",
+                "Macedonia",
+                "Madagascar",
+                "Malawi",
+                "Malaysia",
+                "Maldives",
+                "Mali",
+                "Malta",
+                "Marshall Islands",
+                "Martinique",
+                "Mauritania",
+                "Mauritius",
+                "Mayotte",
+                "Mexico",
+                "Micronesia",
+                "Moldova",
+                "Monaco",
+                "Mongolia",
+                "Montenegro",
+                "Montserrat",
+                "Morocco",
+                "Mozambique",
+                "Myanmar",
+                "Namibia",
+                "Nepal",
+                "Netherlands",
+                "New Caledonia",
+                "New Zealand",
+                "Nicaragua",
+                "Niger",
+                "Nigeria",
+                "Niue",
+                "Norway",
+                "Oman",
+                "Pakistan",
+                "Palau",
+                "Palestine",
+                "Panama",
+                "Papua New Guinea",
+                "Paraguay",
+                "Peru",
+                "Philippines",
+                "Poland",
+                "Portugal",
+                "Qatar",
+                "Romania",
+                "Russia",
+                "Rwanda",
+                "Réunion",
+                "S. Korea",
+                "Saint Helena",
+                "Saint Kitts and Nevis",
+                "Saint Lucia",
+                "Saint Martin",
+                "Saint Pierre Miquelon",
+                "Saint Vincent and the Grenadines",
+                "Samoa",
+                "San Marino",
+                "Sao Tome and Principe",
+                "Saudi Arabia",
+                "Senegal",
+                "Serbia",
+                "Seychelles",
+                "Sierra Leone",
+                "Singapore",
+                "Sint Maarten",
+                "Slovakia",
+                "Slovenia",
+                "Solomon Islands",
+                "Somalia",
+                "South Africa",
+                "South Sudan",
+                "Spain",
+                "Sri Lanka",
+                "St. Barth",
+                "Sudan",
+                "Suriname",
+                "Swaziland",
+                "Sweden",
+                "Switzerland",
+                "Syrian Arab Republic",
+                "Taiwan",
+                "Tajikistan",
+                "Tanzania",
+                "Thailand",
+                "Timor-Leste",
+                "Togo",
+                "Tonga",
+                "Trinidad and Tobago",
+                "Tunisia",
+                "Turkey",
+                "Turks and Caicos Islands",
+                "UAE",
+                "UK",
+                "USA",
+                "Uganda",
+                "Ukraine",
+                "Uruguay",
+                "Uzbekistan",
+                "Vanuatu",
+                "Venezuela",
+                "Vietnam",
+                "Wallis and Futuna",
+                "Western Sahara",
+                "Yemen",
+                "Zambia",
+                "Zimbabwe"
+        };
 
-//        adapter = new CountryPickerAdapter(mainActivity, listSummary);
-        adapter = new ArrayAdapter(mainActivity, android.R.layout.simple_spinner_item, listCountry);
+        adapter = new ArrayAdapter(mainActivity, android.R.layout.simple_spinner_item, items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
         spinner.setAdapter(adapter);
+        spinner.setSelection(221);
+        getListSummary();
+        Pie pie = AnyChart.pie();
+        AnyChartView anyChartView =  view.findViewById(R.id.any_chart_view);
+        List<DataEntry> data = new ArrayList<>();
+        data.add(new ValueDataEntry("Cases", 6820458));
+        data.add(new ValueDataEntry("Deaths", 41607));
+        data.add(new ValueDataEntry("Recovered", 3547488));
+        anyChartView.setChart(pie);
+        pie.data(data);
+        pie.labels().position("outside");
+        Picasso.get()
+                .load("https://disease.sh/assets/img/flags/vn.png")
+                .error(R.drawable.ic_launcher_background)
+                .into(img);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(mainActivity, adapter.getItem(i).toString(), Toast.LENGTH_SHORT).show();
+            public void onItemSelected(AdapterView<?> adapterView, View view, int index, long l) {
+                Summary s = new Summary();
+                for (int i = 0; i < listSummary.size(); i++) {
+                    if (spinner.getSelectedItem().toString().equalsIgnoreCase(listSummary.get(i).getCountry())) {
+                        s = listSummary.get(i);
+                        List<DataEntry> data = new ArrayList<>();
+                        data.add(new ValueDataEntry("Cases", s.getCases()));
+                        data.add(new ValueDataEntry("Deaths", s.getDeaths()));
+                        data.add(new ValueDataEntry("Recovered", s.getRecovered()));
+                        pie.data(data);
+                        pie.labels().position("outside");
+                        Picasso.get()
+                                .load(s.getCountryInfo().getFlag())
+                                .error(R.drawable.ic_launcher_background)
+                                .into(img);
+                        break;
+                    }
+                }
             }
 
             @Override
@@ -74,21 +334,10 @@ public class FragmentCovidData extends Fragment {
 
             }
         });
-        Pie pie = AnyChart.pie();
-
-        List<DataEntry> data = new ArrayList<>();
-        data.add(new ValueDataEntry("A", 10000));
-        data.add(new ValueDataEntry("B", 20000));
-        data.add(new ValueDataEntry("C", 5000));
-
-        pie.data(data);
-
-        AnyChartView anyChartView = (AnyChartView) view.findViewById(R.id.any_chart_view);
-        anyChartView.setChart(pie);
         return view;
     }
 
-    public void getListCountry() {
+    public void getListSummary() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(SUMMARY_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -102,10 +351,6 @@ public class FragmentCovidData extends Fragment {
             @Override
             public void onResponse(Call<List<Summary>> call, Response<List<Summary>> response) {
                 listSummary = response.body();
-                for(Summary summary : listSummary){
-                    listCountry.add(summary.getCountry());
-                }
-
             }
 
             @Override

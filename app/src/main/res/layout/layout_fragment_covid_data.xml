@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/backgroundColor"
     android:padding="12dp">
 
     <Spinner
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="90dp"
         android:layout_marginBottom="20dp"
-        />
+        android:background="#DCDCDC" />
+
+    <ImageView
+        android:id="@+id/tvid"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+     />
+
     <com.anychart.AnyChartView
         android:id="@+id/any_chart_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/backgroundColor"
-        />
+        android:layout_width="358dp"
+        android:layout_height="564dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:background="@color/backgroundColor" />
 
-</LinearLayout>
+</RelativeLayout>
