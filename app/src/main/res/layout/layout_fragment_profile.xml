@@ -1,9 +1,334 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     android:orientation="vertical"
-    android:padding="12dp"
-    android:background="@color/backgroundColor">
+    android:padding="12dp">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans_extrabold"
+            android:gravity="bottom"
+            android:text="Personal Information" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:gravity="bottom"
+            android:text="Name" />
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:editable="false"
+            android:clickable="false"
+            tools:ignore="Deprecated" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:gravity="bottom"
+            android:text="Personal Identification" />
+
+        <EditText
+            android:id="@+id/edt_id"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:editable="false"
+            android:clickable="false"
+            tools:ignore="Deprecated"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:text="Birthdate" />
+
+        <EditText
+            android:id="@+id/edt_bd"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:editable="false"
+            android:clickable="false"
+            tools:ignore="Deprecated"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:text="Gender" />
+
+        <EditText
+            android:id="@+id/edt_gender"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:editable="false"
+            android:clickable="false"
+            tools:ignore="Deprecated"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:text="Phone number"
+            />
+
+        <EditText
+            android:id="@+id/edt_phone"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:editable="false"
+            android:clickable="false"
+            tools:ignore="Deprecated"/>
+
+        <TextView
+            android:id="@+id/tv_vaccinne_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/nunito_sans_extrabold"
+            android:gravity="bottom"
+            android:text="Vaccine Information" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nunito_sans"
+            android:gravity="bottom"
+            android:text="Vaccine 1" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:gravity="bottom"
+            android:text="Name" />
+
+        <EditText
+            android:id="@+id/edt_vaccine_name1"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:editable="false"
+            android:clickable="false"
+            tools:ignore="Deprecated"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:gravity="bottom"
+            android:text="Vaccination Unit" />
+
+        <EditText
+            android:id="@+id/edt_vaccine_unit1"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:editable="false"
+            android:clickable="false"
+            tools:ignore="Deprecated"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:gravity="bottom"
+            android:text="Vaccination Type" />
+
+        <EditText
+            android:id="@+id/edt_vaccine_type1"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:editable="false"
+            android:clickable="false"
+            tools:ignore="Deprecated"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nunito_sans"
+            android:gravity="bottom"
+            android:text="Vaccine 2" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:gravity="bottom"
+            android:text="Name" />
+
+        <EditText
+            android:id="@+id/edt_vaccine_name2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:editable="false"
+            android:clickable="false"
+            tools:ignore="Deprecated"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:gravity="bottom"
+            android:text="Vaccination Unit" />
+
+        <EditText
+            android:id="@+id/edt_vaccine_unit2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:autofillHints="" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:gravity="bottom"
+            android:text="Name" />
+
+        <EditText
+            android:id="@+id/edt_vaccine_type2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:editable="false"
+            android:clickable="false"
+            tools:ignore="Deprecated"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nunito_sans"
+            android:gravity="bottom"
+            android:text="Vaccination Type" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:gravity="bottom"
+            android:text="Vaccine 3" />
+
+        <EditText
+            android:id="@+id/edt_vaccine_name3"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:editable="false"
+            android:clickable="false"
+            tools:ignore="Deprecated"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:gravity="bottom"
+            android:text="Vaccination Unit" />
+
+        <EditText
+            android:id="@+id/edt_vaccine_unit3"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:editable="false"
+            android:clickable="false"
+            tools:ignore="Deprecated"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:gravity="bottom"
+            android:text="Vaccination Type" />
+
+        <EditText
+            android:id="@+id/edt_vaccine_type3"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:editable="false"
+            android:clickable="false"
+            tools:ignore="Deprecated"/>
+
+        <Button
+            android:id="@+id/btn_edit_prf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Edit"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/btn_save_prf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Save"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+</ScrollView>

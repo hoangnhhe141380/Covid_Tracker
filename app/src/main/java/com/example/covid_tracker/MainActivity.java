@@ -25,6 +25,7 @@ import com.example.covid_tracker.fragments.FragmentPassword;
 import com.example.covid_tracker.fragments.FragmentPrevention;
 import com.example.covid_tracker.fragments.FragmentProfile;
 import com.example.covid_tracker.fragments.FragmentSymptoms;
+import com.example.covid_tracker.model.Account;
 import com.google.android.material.navigation.NavigationView;
 
 
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity
     public static final int FRAGMENT_LOGOUT = 9;
 
     public static int mCurrentFragment = FRAGMENT_LOGIN;
-
+    public static Account currentAccount = null;
     private DrawerLayout mDrawerLayout;
     private Toolbar toolbar;
     private ActionBarDrawerToggle actionBarDrawerToggle;

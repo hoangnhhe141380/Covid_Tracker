@@ -1,25 +1,56 @@
 package com.example.covid_tracker.model;
 
-import java.util.List;
+import com.google.firebase.database.Exclude;
+import com.google.firebase.database.IgnoreExtraProperties;
 
-public class Account {
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@IgnoreExtraProperties
+public class Account implements Serializable{
     private String address;
     private String birthDate;
     private boolean gender;
     private String name;
-    private Integer personalID;
+    private String personalID;
     private String phone;
-    private List<Vaccine> vaccineList;
+    private Vaccine vaccine1;
+    private Vaccine vaccine2;
+    private Vaccine vaccine3;
 
-    public Account(String address, String birthDate, boolean gender, String name, Integer personalID, String phone, List<Vaccine> vaccineList) {
+    public Account() {
+    }
+
+    public Account(String address, String birthDate, boolean gender, String name, String personalID, String phone, Vaccine vaccine1, Vaccine vaccine2, Vaccine vaccine3) {
         this.address = address;
         this.birthDate = birthDate;
         this.gender = gender;
         this.name = name;
         this.personalID = personalID;
         this.phone = phone;
-        this.vaccineList = vaccineList;
+        this.vaccine1 = vaccine1;
+        this.vaccine2 = vaccine2;
+        this.vaccine3 = vaccine3;
     }
+
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("Address", address);
+        result.put("BirthDate", birthDate);
+        result.put("Gender", gender);
+        result.put("Name", name);
+        result.put("PersonalID", personalID);
+        result.put("Phone", phone);
+        result.put("Vaccine1", vaccine1);
+        result.put("Vaccine2", vaccine2);
+        result.put("Vaccine3", vaccine3);
+
+        return result;
+    }
+
 
     public String getAddress() {
         return address;
@@ -53,11 +84,11 @@ public class Account {
         this.name = name;
     }
 
-    public Integer getPersonalID() {
+    public String getPersonalID() {
         return personalID;
     }
 
-    public void setPersonalID(Integer personalID) {
+    public void setPersonalID(String personalID) {
         this.personalID = personalID;
     }
 
@@ -69,11 +100,27 @@ public class Account {
         this.phone = phone;
     }
 
-    public List<Vaccine> getVaccineList() {
-        return vaccineList;
+    public Vaccine getVaccine1() {
+        return vaccine1;
     }
 
-    public void setVaccineList(List<Vaccine> vaccineList) {
-        this.vaccineList = vaccineList;
+    public void setVaccine1(Vaccine vaccine1) {
+        this.vaccine1 = vaccine1;
+    }
+
+    public Vaccine getVaccine2() {
+        return vaccine2;
+    }
+
+    public void setVaccine2(Vaccine vaccine2) {
+        this.vaccine2 = vaccine2;
+    }
+
+    public Vaccine getVaccine3() {
+        return vaccine3;
+    }
+
+    public void setVaccine3(Vaccine vaccine3) {
+        this.vaccine3 = vaccine3;
     }
 }

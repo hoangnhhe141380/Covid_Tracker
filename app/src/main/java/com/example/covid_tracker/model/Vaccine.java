@@ -5,6 +5,9 @@ public class Vaccine {
     private String vaccinationUnit;
     private String vaccinationType;
 
+    public Vaccine() {
+    }
+
     public Vaccine(String date, String vaccinationUnit, String vaccinationType) {
         this.date = date;
         this.vaccinationUnit = vaccinationUnit;

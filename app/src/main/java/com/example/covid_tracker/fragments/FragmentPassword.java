@@ -81,7 +81,11 @@ public class FragmentPassword extends Fragment {
                             // Update UI
                             //TODO
                             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                            transaction.replace(R.id.content_frame, new FragmentHome());
+                            FragmentProfile profile = new FragmentProfile();
+                            Bundle bundle = new Bundle();
+                            bundle.putString("phoneNumber",user.getPhoneNumber());
+                            profile.setArguments(bundle);
+                            transaction.replace(R.id.content_frame, profile);
                             transaction.commit();
                         } else {
                             // Sign in failed, display a message and update the UI
