@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 @IgnoreExtraProperties
 public class Account implements Serializable{
     private String address;
