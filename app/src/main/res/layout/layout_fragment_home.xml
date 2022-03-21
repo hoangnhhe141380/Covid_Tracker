@@ -197,8 +197,9 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginVertical="20dp"
-            android:layout_marginBottom="28dp"
+            android:layout_marginBottom="52dp"
             android:background="@drawable/i_deaths"
+            android:fontFamily="@font/nunito_sans_semibold"
             android:gravity="right|center_vertical"
             android:padding="10dp"
             android:paddingLeft="20dp"
@@ -207,8 +208,7 @@
             app:layout_constraintBottom_toTopOf="@+id/tv_recovered"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            android:fontFamily="@font/nunito_sans_semibold"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_deaths2"
@@ -344,6 +344,42 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_cases_lastday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading..."
+            app:layout_constraintBottom_toBottomOf="@+id/tv_cases"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.951"
+            app:layout_constraintStart_toStartOf="@+id/tv_cases"
+            app:layout_constraintTop_toTopOf="@+id/tv_cases"
+            app:layout_constraintVertical_bias="0.839" />
+
+        <TextView
+            android:id="@+id/tv_deaths_lastday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading..."
+            app:layout_constraintBottom_toBottomOf="@+id/tv_deaths"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.951"
+            app:layout_constraintStart_toStartOf="@+id/tv_deaths"
+            app:layout_constraintTop_toTopOf="@+id/tv_deaths"
+            app:layout_constraintVertical_bias="0.827" />
+
+        <TextView
+            android:id="@+id/tv_recovered_lastday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading..."
+            app:layout_constraintBottom_toBottomOf="@+id/tv_recovered"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.978"
+            app:layout_constraintStart_toStartOf="@+id/tv_recovered"
+            app:layout_constraintTop_toTopOf="@+id/tv_recovered"
+            app:layout_constraintVertical_bias="0.839" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

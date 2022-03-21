@@ -41,6 +41,9 @@ public class FragmentHome extends Fragment {
     private TextView tv_cases;
     private TextView tv_deaths;
     private TextView tv_recovered;
+    private TextView tv_cases_lastday;
+    private TextView tv_deaths_lastday;
+    private TextView tv_recovered_lastday;
     private MainActivity mainActivity;
 
     @Nullable
@@ -53,6 +56,9 @@ public class FragmentHome extends Fragment {
         tv_cases = view.findViewById(R.id.tv_cases);
         tv_deaths = view.findViewById(R.id.tv_deaths);
         tv_recovered = view.findViewById(R.id.tv_recovered);
+        tv_cases_lastday = view.findViewById(R.id.tv_cases_lastday);
+        tv_deaths_lastday = view.findViewById(R.id.tv_deaths_lastday);
+        tv_recovered_lastday = view.findViewById(R.id.tv_recovered_lastday);
 
         Calendar currentDate = Calendar.getInstance();
         String date = DateFormat.getInstance().format(currentDate.getTime());
@@ -137,20 +143,32 @@ public class FragmentHome extends Fragment {
                     long totalCases = 0;
                     long totalDeaths = 0;
                     long totalRecovered = 0;
+                    long totalCasesLastday = 0;
+                    long totalDeathsLastday = 0;
+                    long totalRecoveredLastday = 0;
 
                     for (Summary summary : listSummary) {
                         totalCases += summary.getCases();
                         totalDeaths += summary.getDeaths();
                         totalRecovered += summary.getRecovered();
+                        totalCasesLastday += summary.getTodayCases();
+                        totalDeathsLastday += summary.getTodayDeaths();
+                        totalRecoveredLastday += summary.getTodayRecovered();
                     }
 
                     String stringTotalCases = totalCases == 0 ? "N/A" : NumberFormat.getNumberInstance(Locale.US).format(totalCases);
                     String stringTotalDeaths = totalDeaths == 0 ? "N/A" : NumberFormat.getNumberInstance(Locale.US).format(totalDeaths);
                     String stringTotalRecovered = totalRecovered == 0 ? "N/A" : NumberFormat.getNumberInstance(Locale.US).format(totalRecovered);
+                    String stringTotalCasesLastday = totalCasesLastday == 0 ? "N/A" : NumberFormat.getNumberInstance(Locale.US).format(totalCasesLastday);
+                    String stringTotalDeathsLastday = totalDeathsLastday == 0 ? "N/A" : NumberFormat.getNumberInstance(Locale.US).format(totalDeathsLastday);
+                    String stringTotalRecoveredLastday = totalRecoveredLastday == 0 ? "N/A" : NumberFormat.getNumberInstance(Locale.US).format(totalRecoveredLastday);
 
                     tv_cases.setText(stringTotalCases);
                     tv_deaths.setText(stringTotalDeaths);
                     tv_recovered.setText(stringTotalRecovered);
+                    tv_cases_lastday.setText(stringTotalCasesLastday);
+                    tv_deaths_lastday.setText(stringTotalDeathsLastday);
+                    tv_recovered_lastday.setText(stringTotalRecoveredLastday);
                 }
 
             }
@@ -161,6 +179,9 @@ public class FragmentHome extends Fragment {
                 tv_cases.setText("Error");
                 tv_deaths.setText("Error");
                 tv_recovered.setText("Error");
+                tv_cases_lastday.setText("Error");
+                tv_deaths_lastday.setText("Error");
+                tv_recovered_lastday.setText("Error");
             }
         });
     }

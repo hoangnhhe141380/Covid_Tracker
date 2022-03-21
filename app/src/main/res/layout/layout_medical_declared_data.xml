@@ -15,26 +15,41 @@
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/tv_date"
+            android:id="@+id/tv_date_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="Date"/>
+            android:text="Date from"/>
 
         <TextView
-            android:id="@+id/tv_vaccination_unit"
+            android:id="@+id/tv_date_end"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="Unit"/>
+            android:text="Date to"/>
 
         <TextView
-            android:id="@+id/tv_vaccination_type"
+            android:id="@+id/tv_is_contact_f0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="Type"
+            android:text="Is contact with f0"
              />
+
+        <TextView
+            android:id="@+id/tv_place_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Place contact"
+            />
+
+        <TextView
+            android:id="@+id/tv_symptoms_mdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Symptom"
+            />
 
 
     </LinearLayout>
