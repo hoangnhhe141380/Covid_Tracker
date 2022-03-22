@@ -78,17 +78,6 @@ public class FragmentProfile extends Fragment {
     }
 
     private void onEditPrf(View view) {
-        edt_name.setEnabled(true);
-        edit_phone.setEnabled(true);
-        edt_vaccine_name1.setEnabled(true);
-        edt_vaccine_unit1.setEnabled(true);
-        edt_vaccine_type1.setEnabled(true);
-        edt_vaccine_name2.setEnabled(true);
-        edt_vaccine_unit2.setEnabled(true);
-        edt_vaccine_type2.setEnabled(true);
-        edt_vaccine_name3.setEnabled(true);
-        edt_vaccine_unit3.setEnabled(true);
-        edt_vaccine_type3.setEnabled(true);
         btnEdit.setVisibility(View.GONE);
         btnCancel.setVisibility(View.VISIBLE);
         btnSave.setVisibility(View.VISIBLE);
@@ -98,17 +87,6 @@ public class FragmentProfile extends Fragment {
     private void onSavePrf(View view) {
         updateData();
         ref.setValue(MainActivity.currentAccount);
-        edt_name.setEnabled(false);
-        edit_phone.setEnabled(false);
-        edt_vaccine_name1.setEnabled(false);
-        edt_vaccine_unit1.setEnabled(false);
-        edt_vaccine_type1.setEnabled(false);
-        edt_vaccine_name2.setEnabled(false);
-        edt_vaccine_unit2.setEnabled(false);
-        edt_vaccine_type2.setEnabled(false);
-        edt_vaccine_name3.setEnabled(false);
-        edt_vaccine_unit3.setEnabled(false);
-        edt_vaccine_type3.setEnabled(false);
         btnEdit.setVisibility(View.VISIBLE);
         btnCancel.setVisibility(View.GONE);
         btnSave.setVisibility(View.GONE);
@@ -116,17 +94,6 @@ public class FragmentProfile extends Fragment {
     }
 
     private void onCancelPrf(View view) {
-        edt_name.setEnabled(false);
-        edit_phone.setEnabled(false);
-        edt_vaccine_name1.setEnabled(false);
-        edt_vaccine_unit1.setEnabled(false);
-        edt_vaccine_type1.setEnabled(false);
-        edt_vaccine_name2.setEnabled(false);
-        edt_vaccine_unit2.setEnabled(false);
-        edt_vaccine_type2.setEnabled(false);
-        edt_vaccine_name3.setEnabled(false);
-        edt_vaccine_unit3.setEnabled(false);
-        edt_vaccine_type3.setEnabled(false);
         btnEdit.setVisibility(View.VISIBLE);
         btnCancel.setVisibility(View.GONE);
         btnSave.setVisibility(View.GONE);
@@ -134,7 +101,7 @@ public class FragmentProfile extends Fragment {
 
     private void updateData() {
         MainActivity.currentAccount.setName(edt_name.getText().toString().trim());
-        MainActivity.currentAccount.setPhone(edit_phone.getText().toString().trim());
+        MainActivity.currentAccount.setPhone("+84"+edit_phone.getText().toString().trim().substring(1));
         MainActivity.currentAccount.setVaccine1(new Vaccine(
                 edt_vaccine_type1.getText().toString().trim(),
                 edt_vaccine_unit1.getText().toString().trim(),
@@ -188,7 +155,7 @@ public class FragmentProfile extends Fragment {
         edit_id.setText(MainActivity.currentAccount.getPersonalID());
         edit_bd.setText(MainActivity.currentAccount.getBirthDate());
         edit_gender.setText(MainActivity.currentAccount.isGender() ? "Male" : "Female");
-        edit_phone.setText(MainActivity.currentAccount.getPhone());
+        edit_phone.setText('0'+MainActivity.currentAccount.getPhone().substring(2));
         if (null != MainActivity.currentAccount.getVaccine1()) {
             edt_vaccine_name1.setText(MainActivity.currentAccount.getVaccine1().getVaccinationType());
             edt_vaccine_unit1.setText(MainActivity.currentAccount.getVaccine1().getVaccinationUnit());

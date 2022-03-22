@@ -45,12 +45,11 @@ public class FragmentMedicalDeclaredData extends Fragment {
         bindingAction();
         DatabaseReference reference = bindingDatabaseRef();
         bindingAccountListener(reference);
- //       onMedicalDeclaredData(reference);
         return view;
     }
     private DatabaseReference bindingDatabaseRef() {
         database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference("/MedicalDeclared/+84944169551");
+        DatabaseReference ref = database.getReference("/MedicalDeclared/"+MainActivity.currentAccount.getPhone());
         return ref;
     }
 
@@ -97,10 +96,5 @@ public class FragmentMedicalDeclaredData extends Fragment {
         transaction.commit();
     }
 
-    private void onMedicalDeclaredData(DatabaseReference ref){
-        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = new Date();
-        ref.child("23-03-2022").setValue(new MedicalDeclaredData("3/23/2022", "3/23/2022", "3/23/2022", true, "ha noi", "loi loz"));
-    }
 
 }
