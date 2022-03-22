@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingHorizontal="10dp"
-            android:text="@string/txt_lorem"
+            android:text="Recent research evaluated the survival of the COVID-19 virus on different surfaces and reported that the virus can remain viable for up to 72 hours on plastic and stainless steel, up to four hours on copper, and up to 24 hours on cardboard."
             android:textColor="@color/black"
             android:fontFamily="@font/nunito_sans"
             android:translationY="-140dp" />

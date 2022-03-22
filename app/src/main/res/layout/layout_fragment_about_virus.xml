@@ -18,7 +18,7 @@
         android:layout_weight="1"
         app:layout_constraintBottom_toTopOf="@+id/txt_title_about_virus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/i_about_virus" />
 
@@ -44,12 +44,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="4dp"
-        android:fontFamily="@font/nunito_sans_extrabold"
-
-        android:layout_marginBottom="64dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/nunito_sans"
         android:paddingHorizontal="10dp"
-        android:text="@string/txt_lorem"
+        android:text="COVID-19 is the disease caused by SARS-CoV-2, the coronavirus that emerged in December 2019. COVID-19 can be severe, and has caused millions of deaths around the world as well as lasting health problems in some who have survived the illness. The coronavirus can be spread from person to person. It is diagnosed with a test. The best way to protect yourself is to get vaccinated and boosted when you are eligible, follow testing guidelines, wear a mask, wash your hands and practice physical distancing."
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

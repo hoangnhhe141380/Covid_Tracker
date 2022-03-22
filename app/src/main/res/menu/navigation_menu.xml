@@ -32,7 +32,7 @@
         android:visible="true" />
     <item
         android:id="@+id/navigation_covid_data"
-        android:icon="@drawable/ic_covid_data"
+        android:icon="@drawable/ic_statistic"
         android:title="@string/covid_data"
         android:visible="true" />
     <item
