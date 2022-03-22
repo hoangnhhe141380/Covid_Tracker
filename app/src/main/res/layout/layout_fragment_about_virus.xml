@@ -20,6 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
+        android:translationY="60dp"
         app:srcCompat="@drawable/i_about_virus" />
 
     <TextView

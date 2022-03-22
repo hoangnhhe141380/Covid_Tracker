@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:background="@color/backgroundColor"
+    android:orientation="vertical"
+    android:padding="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,13 +59,16 @@
             android:gravity="bottom"
             android:text="Contact with F0" />
 
-        <EditText
+        <CheckBox
             android:id="@+id/edt_add_contact_with_f0"
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="left"
             android:layout_marginBottom="10dp"
-            android:autofillHints="" />
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:autofillHints=""
+            android:text="Yes/No"/>
 
         <TextView
             android:layout_width="match_parent"

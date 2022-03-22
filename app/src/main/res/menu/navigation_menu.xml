@@ -63,6 +63,6 @@
         android:id="@+id/navigation_add"
         android:fontFamily="@font/nunito_sans_extrabold"
         android:icon="@drawable/ic_logout"
-        android:title="@string/logout"
+        android:title="Add"
         android:visible="true" />
 </menu>
