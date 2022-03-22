@@ -34,6 +34,7 @@ public class MedicalDeclaredAdapter extends RecyclerView.Adapter<MedicalDeclared
         MedicalDeclaredData symptom = listSymptoms.get(position);
         if (symptom == null) return;
 
+        holder.tv_date_declare.setText(symptom.getDateDeclare());
         holder.tv_date_start.setText(symptom.getDateStart());
         holder.tv_date_end.setText(symptom.getDateEnd());
         holder.tv_is_contact_f0.setText(symptom.isContactWithF0() ? "Yes" : "No");
@@ -53,10 +54,11 @@ public class MedicalDeclaredAdapter extends RecyclerView.Adapter<MedicalDeclared
         private TextView tv_is_contact_f0;
         private TextView tv_place_contact;
         private TextView tv_symptoms_mdd;
+        private TextView tv_date_declare;
 
         public MedicalDeclaredViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            tv_date_declare = itemView.findViewById(R.id.tv_date_declare);
             tv_date_start = itemView.findViewById(R.id.tv_date_start);
             tv_date_end = itemView.findViewById(R.id.tv_date_end);
             tv_is_contact_f0 = itemView.findViewById(R.id.tv_is_contact_f0);

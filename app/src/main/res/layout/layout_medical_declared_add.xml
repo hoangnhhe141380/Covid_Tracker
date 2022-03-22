@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_sans_extrabold"
             android:gravity="bottom"
-            android:text="Personal Information" />
+            android:text="Medical Information Declaration" />
 
         <TextView
             android:layout_width="match_parent"

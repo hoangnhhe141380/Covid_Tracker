@@ -219,47 +219,7 @@ public class FragmentProfile extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot data : snapshot.getChildren()
-                ) {
-                    switch (data.getKey()) {
-                        case "address": {
-                            MainActivity.currentAccount.setAddress(data.getValue().toString());
-                            break;
-                        }
-                        case "gender": {
-                            MainActivity.currentAccount.setGender(data.getValue().toString().equals(1));
-                            break;
-                        }
-                        case "name": {
-                            MainActivity.currentAccount.setName(data.getValue().toString());
-                            break;
-                        }
-                        case "phone": {
-                            MainActivity.currentAccount.setPhone(data.getValue().toString());
-                            break;
-                        }
-                        case "personalID": {
-                            MainActivity.currentAccount.setPersonalID(data.getValue().toString());
-                            break;
-                        }
-                        case "birthDate": {
-                            MainActivity.currentAccount.setBirthDate(data.getValue().toString());
-                            break;
-                        }
-                        case "vaccine1": {
-                            MainActivity.currentAccount.setVaccine1(data.getValue(Vaccine.class));
-                            break;
-                        }
-                        case "vaccine2": {
-                            MainActivity.currentAccount.setVaccine2(data.getValue(Vaccine.class));
-                            break;
-                        }
-                        case "vaccine3": {
-                            MainActivity.currentAccount.setVaccine3(data.getValue(Vaccine.class));
-                            break;
-                        }
-                    }
-                }
+                MainActivity.currentAccount = snapshot.getValue(Account.class);
                 bindingData();
             }
 

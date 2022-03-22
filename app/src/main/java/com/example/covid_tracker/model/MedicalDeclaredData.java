@@ -2,15 +2,18 @@ package com.example.covid_tracker.model;
 
 public class MedicalDeclaredData {
 
-    private Account account;
+    private String dateDeclare;
     private String dateStart;
     private String dateEnd;
     private boolean isContactWithF0;
     private String placeContact;
     private String symptoms;
 
-    public MedicalDeclaredData(Account account, String dateStart, String dateEnd, boolean isContactWithF0, String placeContact, String symptoms) {
-        this.account = account;
+    public MedicalDeclaredData() {
+    }
+
+    public MedicalDeclaredData(String dateDeclare, String dateStart, String dateEnd, boolean isContactWithF0, String placeContact, String symptoms) {
+        this.dateDeclare = dateDeclare;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
         this.isContactWithF0 = isContactWithF0;
@@ -18,12 +21,12 @@ public class MedicalDeclaredData {
         this.symptoms = symptoms;
     }
 
-    public Account getAccount() {
-        return account;
+    public String getDateDeclare() {
+        return dateDeclare;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setDateDeclare(String dateDeclare) {
+        this.dateDeclare = dateDeclare;
     }
 
     public String getDateStart() {
