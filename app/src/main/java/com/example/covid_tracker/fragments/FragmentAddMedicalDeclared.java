@@ -11,11 +11,14 @@ import androidx.fragment.app.Fragment;
 
 import com.example.covid_tracker.R;
 
-public class FragmentChart extends Fragment {
+public class FragmentAddMedicalDeclared extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.layout_fragment_logout, container, false);
+        getActivity().setTitle("Add Medical Declared");
+        View view = inflater.inflate(R.layout.layout_medical_declared_add, container, false);
+
+        return view;
     }
 }

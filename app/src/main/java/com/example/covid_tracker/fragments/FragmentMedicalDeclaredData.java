@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,6 +34,7 @@ public class FragmentMedicalDeclaredData extends Fragment {
     private RecyclerView recyclerView;
     private final int NUMBER_OF_COLUMN = 1;
     private FirebaseDatabase database;
+    private Button btn_add_mdd;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,6 +42,7 @@ public class FragmentMedicalDeclaredData extends Fragment {
         mainActivity = (MainActivity) getActivity();
         View view = inflater.inflate(R.layout.layout_fragment_medical_declared_data, container, false);
         bindingView(view);
+        bindingAction();
         DatabaseReference reference = bindingDatabaseRef();
         bindingAccountListener(reference);
  //       onMedicalDeclaredData(reference);
@@ -79,6 +83,18 @@ public class FragmentMedicalDeclaredData extends Fragment {
 
     private void bindingView(View view){
         recyclerView = view.findViewById(R.id.recyclerView);
+        btn_add_mdd = view.findViewById(R.id.btn_add_mdd);
+    }
+
+    private void bindingAction(){
+        btn_add_mdd.setOnClickListener(this::onAddMdd);
+    }
+
+    private void onAddMdd(View view) {
+        MainActivity.setCurrentFragment(10);
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.content_frame, new FragmentAddMedicalDeclared());
+        transaction.commit();
     }
 
     private void onMedicalDeclaredData(DatabaseReference ref){

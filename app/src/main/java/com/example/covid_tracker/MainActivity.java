@@ -16,6 +16,7 @@ import android.os.Handler;
 import android.view.MenuItem;
 
 import com.example.covid_tracker.fragments.FragmentAboutVirus;
+import com.example.covid_tracker.fragments.FragmentAddMedicalDeclared;
 import com.example.covid_tracker.fragments.FragmentCovidData;
 import com.example.covid_tracker.fragments.FragmentHome;
 import com.example.covid_tracker.fragments.FragmentLogin;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity
     public static final int FRAGMENT_SYMPTOMS = 7;
     public static final int FRAGMENT_PREVENTION = 8;
     public static final int FRAGMENT_LOGOUT = 9;
+    public static final int FRAGMENT_ADD = 10;
 
     public static int mCurrentFragment = FRAGMENT_LOGIN;
     public static Account currentAccount = null;
@@ -153,6 +155,12 @@ public class MainActivity extends AppCompatActivity
                     mCurrentFragment = FRAGMENT_LOGOUT;
                 }
                 break;
+            case R.id.navigation_add:
+                if (mCurrentFragment != FRAGMENT_ADD) {
+                    replaceFragment(new FragmentAddMedicalDeclared());
+                    mCurrentFragment = FRAGMENT_ADD;
+                }
+                break;
             default:
                 break;
         }
@@ -178,53 +186,7 @@ public class MainActivity extends AppCompatActivity
         transaction.commit();
     }
 
-    //    public void getDataSummary() {
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl(API_URL_SUMMARY)
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
-//
-//        GetDataFromJson getDataFromJson = retrofit.create(GetDataFromJson.class);
-//
-//        Call<List<Summary>> call = getDataFromJson.getDataSummary();
-//
-//        call.enqueue(new Callback<List<Summary>>() {
-//            @Override
-//            public void onResponse(Call<List<Summary>> call, Response<List<Summary>> response) {
-//                List<Summary> summary = response.body();
-//                tv_cases.setText(summary.toString());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<Summary>> call, Throwable t) {
-//                tv_cases.setText(t.getMessage());
-//            }
-//        });
-//    }
-//
-//    public void getDataByCountryName(String countryName) {
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl(API_URL)
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
-//
-//        GetDataFromJson getDataFromJson = retrofit.create(GetDataFromJson.class);
-//
-//        Call<List<CountryData>> call = getDataFromJson.getDataByCountry(countryName);
-//
-//        call.enqueue(new Callback<List<CountryData>>() {
-//            @Override
-//            public void onResponse(Call<List<CountryData>> call, Response<List<CountryData>> response) {
-//                List<CountryData> listCountryDayone = response.body();
-//                tv_cases.setText(listCountryDayone.toString());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<CountryData>> call, Throwable t) {
-//                tv_cases.setText(t.getMessage());
-//            }
-//        });
-//    }
+
     public static void setCurrentFragment(int i) {
         mCurrentFragment = i;
     }

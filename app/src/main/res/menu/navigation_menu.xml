@@ -17,7 +17,7 @@
         android:fontFamily="@font/nunito_sans_extrabold"
         android:icon="@drawable/i_icon_nav_bar"
         android:title="@string/password"
-        android:visible="true" />
+        android:visible="false" />
     <item
         android:id="@+id/navigation_profile"
         android:fontFamily="@font/nunito_sans_extrabold"
@@ -55,6 +55,12 @@
         android:visible="true" />
     <item
         android:id="@+id/navigation_logout"
+        android:fontFamily="@font/nunito_sans_extrabold"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/logout"
+        android:visible="false" />
+    <item
+        android:id="@+id/navigation_add"
         android:fontFamily="@font/nunito_sans_extrabold"
         android:icon="@drawable/ic_logout"
         android:title="@string/logout"

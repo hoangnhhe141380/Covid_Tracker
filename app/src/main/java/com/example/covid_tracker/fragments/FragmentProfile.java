@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -45,10 +46,12 @@ public class FragmentProfile extends Fragment {
     private Button btnEdit;
     private Button btnSave;
     private Button btnCancel;
+    private ScrollView scrollView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        getActivity().setTitle("Profile");
         View view = inflater.inflate(R.layout.layout_fragment_profile, container, false);
         String  phoneNumber = "+84913556456";
         Bundle bundle = this.getArguments();
@@ -64,6 +67,7 @@ public class FragmentProfile extends Fragment {
         bindingAccountListener(ref);
         bindingView(view);
         bindingAction();
+
         return view;
     }
 
@@ -88,6 +92,7 @@ public class FragmentProfile extends Fragment {
         btnEdit.setVisibility(View.GONE);
         btnCancel.setVisibility(View.VISIBLE);
         btnSave.setVisibility(View.VISIBLE);
+        scrollView.fullScroll(ScrollView.FOCUS_UP);
     }
 
     private void onSavePrf(View view) {
@@ -158,6 +163,7 @@ public class FragmentProfile extends Fragment {
     }
 
     private void bindingView(View view) {
+        scrollView = view.findViewById(R.id.scroll_prf);
         edt_name = view.findViewById(R.id.edt_name);
         edit_id = view.findViewById(R.id.edt_id);
         edit_bd = view.findViewById(R.id.edt_bd);

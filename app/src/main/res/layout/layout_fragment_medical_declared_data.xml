@@ -12,14 +12,14 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="650dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_edit_mdd"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_mdd"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.002"
         tools:listitem="@layout/layout_medical_declared_data" />
 
     <Button
-        android:id="@+id/btn_edit_mdd"
+        android:id="@+id/btn_add_mdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
