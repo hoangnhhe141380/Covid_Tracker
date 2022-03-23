@@ -87,7 +87,7 @@ public class FragmentPassword extends Fragment {
 
                             FirebaseUser user = task.getResult().getUser();
                             // Update UI
-                            //TODO
+                            setMenu();
                             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                             FragmentProfile profile = new FragmentProfile();
                             Bundle bundle = new Bundle();
@@ -107,4 +107,10 @@ public class FragmentPassword extends Fragment {
                 });
     }
 
+    private void setMenu(){
+        MenuItem navigation_login   = MainActivity.menu.findItem(R.id.navigation_login);
+        MenuItem navigation_logout  = MainActivity.menu.findItem(R.id.navigation_logout);
+        navigation_login.setVisible(false);
+        navigation_logout.setVisible(true);
+    }
 }

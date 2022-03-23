@@ -38,15 +38,28 @@ public class FragmentMedicalDeclaredData extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         getActivity().setTitle("Medical Declared Data");
         mainActivity = (MainActivity) getActivity();
         View view = inflater.inflate(R.layout.layout_fragment_medical_declared_data, container, false);
+        if(null==MainActivity.currentAccount){
+            goToLogin();
+            return view;
+        }
         bindingView(view);
         bindingAction();
         DatabaseReference reference = bindingDatabaseRef();
         bindingAccountListener(reference);
         return view;
     }
+
+    private void goToLogin() {
+        MainActivity.setCurrentFragment(0);
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.content_frame, new FragmentLogin());
+        transaction.commit();
+    }
+
     private DatabaseReference bindingDatabaseRef() {
         database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("/MedicalDeclared/"+MainActivity.currentAccount.getPhone());

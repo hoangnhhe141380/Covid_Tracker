@@ -2,6 +2,7 @@ package com.example.covid_tracker.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -20,7 +21,7 @@ public class FragmentLogout extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.layout_fragment_logout, container, false);
         MainActivity.currentAccount = null;
-        MainActivity mainActivity = (MainActivity) getActivity();
+        setMenu();
         goToLogin();
         return view;
     }
@@ -29,5 +30,12 @@ public class FragmentLogout extends Fragment {
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame, new FragmentLogin());
         transaction.commit();
+    }
+
+    private void setMenu(){
+        MenuItem navigation_login   = MainActivity.menu.findItem(R.id.navigation_login);
+        MenuItem navigation_logout  = MainActivity.menu.findItem(R.id.navigation_logout);
+        navigation_login.setVisible(true);
+        navigation_logout.setVisible(false);
     }
 }

@@ -61,7 +61,7 @@ public class FragmentProfile extends Fragment {
         if (null != bundle) {
             phoneNumber = bundle.getString("phoneNumber");
         }
-        if ((null != MainActivity.currentAccount) && (MainActivity.currentAccount.getPhone().isEmpty())) {
+        if ((null != MainActivity.currentAccount) && (!MainActivity.currentAccount.getPhone().isEmpty())) {
             phoneNumber = MainActivity.currentAccount.getPhone();
         }
         if (null == phoneNumber) {

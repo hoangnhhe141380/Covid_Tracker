@@ -52,14 +52,14 @@ public class MainActivity extends AppCompatActivity
     public static final int FRAGMENT_LOGOUT = 9;
     public static final int FRAGMENT_ADD = 10;
 
-    public static int mCurrentFragment = FRAGMENT_LOGIN;
+    public static int mCurrentFragment = FRAGMENT_HOME;
     public static Account currentAccount = null;
     public boolean isUserLogin = false;
     private DrawerLayout mDrawerLayout;
     private Toolbar toolbar;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private NavigationView navigationView;
-    private Menu menu;
+    public static Menu menu;
 
     @SuppressLint("ResourceAsColor")
     private void bindingView() {
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         bindingView();
-        replaceFragment(new FragmentLogin());
+        replaceFragment(new FragmentHome());
 
         setVisibleMenuItem();
     }
@@ -203,4 +203,5 @@ public class MainActivity extends AppCompatActivity
         MenuItem nav_item = menu.findItem(R.id.navigation_covid_data);
         nav_item.setVisible(false);
     }
+
 }
