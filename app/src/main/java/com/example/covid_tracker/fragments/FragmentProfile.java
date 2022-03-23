@@ -56,10 +56,13 @@ public class FragmentProfile extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getActivity().setTitle("Profile");
         View view = inflater.inflate(R.layout.layout_fragment_profile, container, false);
-        String phoneNumber = "+84944169551";
+        String phoneNumber = null;
         Bundle bundle = this.getArguments();
         if (null != bundle) {
             phoneNumber = bundle.getString("phoneNumber");
+        }
+        if ((null != MainActivity.currentAccount) && (MainActivity.currentAccount.getPhone().isEmpty())) {
+            phoneNumber = MainActivity.currentAccount.getPhone();
         }
         if (null == phoneNumber) {
             goToLogin();
