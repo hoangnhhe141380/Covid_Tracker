@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
@@ -73,7 +74,6 @@ public class FragmentProfile extends Fragment {
         bindingAccountListener(ref);
         bindingView(view);
         bindingAction();
-
         return view;
     }
 

@@ -81,11 +81,13 @@ public class FragmentLogin extends Fragment {
             tv_login_error.setText("Invalid phone number! Please try again!");
             return;
         }
+        txtPhoneNumberLogin.clearFocus();
         String phoneNumber = COUNTRY_CODE + phone.substring(1);
         OnVerificationStateChangedCallbacks(phoneNumber);
     }
 
     private void onBtnSkip(View view) {
+        txtPhoneNumberLogin.clearFocus();
         MainActivity.setCurrentFragment(1);
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame, new FragmentHome());

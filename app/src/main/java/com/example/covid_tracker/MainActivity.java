@@ -16,6 +16,7 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.WindowManager;
 
 import com.example.covid_tracker.fragments.FragmentAboutVirus;
 import com.example.covid_tracker.fragments.FragmentAddMedicalDeclared;
@@ -92,8 +93,7 @@ public class MainActivity extends AppCompatActivity
 
         bindingView();
         replaceFragment(new FragmentHome());
-
-        setVisibleMenuItem();
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
 
@@ -199,9 +199,5 @@ public class MainActivity extends AppCompatActivity
         mCurrentFragment = i;
     }
 
-    public void setVisibleMenuItem(){
-        MenuItem nav_item = menu.findItem(R.id.navigation_covid_data);
-        nav_item.setVisible(false);
-    }
 
 }

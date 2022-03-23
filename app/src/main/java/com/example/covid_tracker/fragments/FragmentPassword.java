@@ -71,7 +71,7 @@ public class FragmentPassword extends Fragment {
             //TODO
             return;
         }
-
+        txtOtp.clearFocus();
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, otp);
         signInWithPhoneAuthCredential(credential);
     }
