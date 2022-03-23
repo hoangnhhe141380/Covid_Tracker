@@ -47,13 +47,16 @@ public class FragmentProfile extends Fragment {
     private Button btnSave;
     private Button btnCancel;
     private ScrollView scrollView;
+    private MainActivity mainActivity;
+    private TextView nav_phone_number;
+    private TextView nav_username;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getActivity().setTitle("Profile");
         View view = inflater.inflate(R.layout.layout_fragment_profile, container, false);
-        String  phoneNumber = "+84913556456";
+        String phoneNumber = "+84944169551";
         Bundle bundle = this.getArguments();
         if (null != bundle) {
             phoneNumber = bundle.getString("phoneNumber");
@@ -62,7 +65,7 @@ public class FragmentProfile extends Fragment {
             goToLogin();
             return view;
         }
-        MainActivity.currentAccount = new Account();
+        mainActivity = (MainActivity) getActivity();
         ref = bindingDatabaseRef(phoneNumber);
         bindingAccountListener(ref);
         bindingView(view);
@@ -101,7 +104,7 @@ public class FragmentProfile extends Fragment {
 
     private void updateData() {
         MainActivity.currentAccount.setName(edt_name.getText().toString().trim());
-        MainActivity.currentAccount.setPhone("+84"+edit_phone.getText().toString().trim().substring(1));
+        MainActivity.currentAccount.setPhone("+84" + edit_phone.getText().toString().trim().substring(1));
         MainActivity.currentAccount.setVaccine1(new Vaccine(
                 edt_vaccine_type1.getText().toString().trim(),
                 edt_vaccine_unit1.getText().toString().trim(),
@@ -148,6 +151,8 @@ public class FragmentProfile extends Fragment {
         btnEdit = view.findViewById(R.id.btn_edit_prf);
         btnSave = view.findViewById(R.id.btn_save_prf);
         btnCancel = view.findViewById(R.id.btn_cancel_prf);
+        nav_phone_number = mainActivity.findViewById(R.id.nav_phone_number);
+        nav_username = mainActivity.findViewById(R.id.nav_username);
     }
 
     private void bindingData() {
@@ -155,7 +160,7 @@ public class FragmentProfile extends Fragment {
         edit_id.setText(MainActivity.currentAccount.getPersonalID());
         edit_bd.setText(MainActivity.currentAccount.getBirthDate());
         edit_gender.setText(MainActivity.currentAccount.isGender() ? "Male" : "Female");
-        edit_phone.setText('0'+MainActivity.currentAccount.getPhone().substring(2));
+        edit_phone.setText(MainActivity.currentAccount.getPhoneVn());
         if (null != MainActivity.currentAccount.getVaccine1()) {
             edt_vaccine_name1.setText(MainActivity.currentAccount.getVaccine1().getVaccinationType());
             edt_vaccine_unit1.setText(MainActivity.currentAccount.getVaccine1().getVaccinationUnit());
@@ -185,7 +190,8 @@ public class FragmentProfile extends Fragment {
             edt_vaccine_unit3.setText("N/A");
             edt_vaccine_type3.setText("N/A");
         }
-
+        nav_phone_number.setText(MainActivity.currentAccount.getPhoneVn());
+        nav_username.setText(MainActivity.currentAccount.getName());
     }
 
     private void bindingAccountListener(DatabaseReference reference) {
@@ -202,4 +208,5 @@ public class FragmentProfile extends Fragment {
             }
         });
     }
+
 }

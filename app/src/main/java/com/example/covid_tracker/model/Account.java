@@ -124,4 +124,8 @@ public class Account implements Serializable{
     public void setVaccine3(Vaccine vaccine3) {
         this.vaccine3 = vaccine3;
     }
+
+    public String getPhoneVn(){
+        return '0'+phone.substring(3);
+    }
 }

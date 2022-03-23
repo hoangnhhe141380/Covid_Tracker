@@ -64,5 +64,5 @@
         android:fontFamily="@font/nunito_sans_extrabold"
         android:icon="@drawable/ic_logout"
         android:title="Add"
-        android:visible="true" />
+        android:visible="false" />
 </menu>

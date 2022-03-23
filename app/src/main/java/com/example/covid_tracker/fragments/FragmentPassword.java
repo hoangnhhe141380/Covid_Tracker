@@ -1,8 +1,12 @@
 package com.example.covid_tracker.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -13,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.covid_tracker.MainActivity;
 import com.example.covid_tracker.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -99,5 +104,9 @@ public class FragmentPassword extends Fragment {
                 });
     }
 
-
+    public void onCreateOptionsMenu(Menu menu) {
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.getMenuInflater().inflate(R.menu.navigation_menu, menu);
+        Menu option = menu;
+    }
 }
