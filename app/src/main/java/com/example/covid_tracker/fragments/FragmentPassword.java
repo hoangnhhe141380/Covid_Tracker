@@ -21,6 +21,7 @@ import com.example.covid_tracker.MainActivity;
 import com.example.covid_tracker.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
@@ -36,6 +37,8 @@ public class FragmentPassword extends Fragment {
     private String phoneNumber;
     private String verificationId;
     private FirebaseAuth mAuth;
+    private Menu optionsMenu;
+    private MenuItem menuItem;
 
     @Nullable
     @Override
@@ -88,7 +91,7 @@ public class FragmentPassword extends Fragment {
                             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                             FragmentProfile profile = new FragmentProfile();
                             Bundle bundle = new Bundle();
-                            bundle.putString("phoneNumber",user.getPhoneNumber());
+                            bundle.putString("phoneNumber", user.getPhoneNumber());
                             profile.setArguments(bundle);
                             transaction.replace(R.id.content_frame, profile);
                             transaction.commit();
@@ -104,9 +107,4 @@ public class FragmentPassword extends Fragment {
                 });
     }
 
-    public void onCreateOptionsMenu(Menu menu) {
-        MainActivity mainActivity = (MainActivity) getActivity();
-        mainActivity.getMenuInflater().inflate(R.menu.navigation_menu, menu);
-        Menu option = menu;
-    }
 }

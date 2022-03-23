@@ -13,6 +13,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.covid_tracker.fragments.FragmentAboutVirus;
@@ -52,10 +54,12 @@ public class MainActivity extends AppCompatActivity
 
     public static int mCurrentFragment = FRAGMENT_LOGIN;
     public static Account currentAccount = null;
+    public boolean isUserLogin = false;
     private DrawerLayout mDrawerLayout;
     private Toolbar toolbar;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private NavigationView navigationView;
+    private Menu menu;
 
     @SuppressLint("ResourceAsColor")
     private void bindingView() {
@@ -76,6 +80,9 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        menu = navigationView.getMenu();
+
     }
 
     @Override
@@ -85,6 +92,8 @@ public class MainActivity extends AppCompatActivity
 
         bindingView();
         replaceFragment(new FragmentLogin());
+
+        setVisibleMenuItem();
     }
 
 
@@ -186,8 +195,12 @@ public class MainActivity extends AppCompatActivity
         transaction.commit();
     }
 
-
     public static void setCurrentFragment(int i) {
         mCurrentFragment = i;
+    }
+
+    public void setVisibleMenuItem(){
+        MenuItem nav_item = menu.findItem(R.id.navigation_covid_data);
+        nav_item.setVisible(false);
     }
 }
